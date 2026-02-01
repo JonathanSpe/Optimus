@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { LogOut, Target, ArrowRight, Microscope } from 'lucide-react';
 
@@ -11,20 +10,20 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ onNavigate, onLogout, currentPage, isLoggedIn }) => {
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 px-6 py-4">
-      <div className="max-w-7xl mx-auto flex items-center justify-between bg-black/80 backdrop-blur-md border border-white/10 rounded-full px-6 py-2.5 shadow-2xl">
+    <nav className="fixed top-0 left-0 w-full z-50 px-6 py-5">
+      <div className="max-w-7xl mx-auto flex items-center justify-between bg-white/70 backdrop-blur-2xl border border-white/40 rounded-3xl px-8 py-3.5 shadow-[0_8px_32px_rgba(0,0,0,0.03)] premium-border">
         <div 
-          className="flex items-center gap-2 cursor-pointer group"
+          className="flex items-center gap-3 cursor-pointer group"
           onClick={() => onNavigate('home')}
         >
-          <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform text-white">O</div>
-          <span className="text-xl font-bold tracking-tighter uppercase text-white">Optimus</span>
+          <div className="w-9 h-9 bg-[#0F172A] rounded-xl flex items-center justify-center font-[900] text-xl group-hover:scale-105 transition-transform text-white shadow-lg">O</div>
+          <span className="text-2xl font-[900] tracking-[-0.05em] uppercase text-[#0F172A]">Optimus</span>
         </div>
         
-        <div className="hidden md:flex items-center gap-8 text-[11px] font-black uppercase tracking-widest">
+        <div className="hidden md:flex items-center gap-10 text-[11px] font-[800] uppercase tracking-[0.2em]">
           <button 
             onClick={() => onNavigate('home')}
-            className={`${currentPage === 'home' ? 'text-white' : 'text-zinc-500'} hover:text-white transition-colors`}
+            className={`${currentPage === 'home' ? 'text-slate-900' : 'text-slate-400'} hover:text-slate-900 transition-all`}
           >
             Startseite
           </button>
@@ -32,25 +31,25 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onLogout, currentPage, isLo
             <>
               <button 
                 onClick={() => onNavigate('supplements')}
-                className={`${currentPage === 'supplements' ? 'text-white' : 'text-zinc-500'} hover:text-white transition-colors`}
+                className={`${currentPage === 'supplements' ? 'text-slate-900' : 'text-slate-400'} hover:text-slate-900 transition-all`}
               >
                 Store
               </button>
               <button 
                 onClick={() => onNavigate('science')}
-                className={`${currentPage === 'science' ? 'text-white' : 'text-zinc-500'} hover:text-white transition-colors`}
+                className={`${currentPage === 'science' ? 'text-slate-900' : 'text-slate-400'} hover:text-slate-900 transition-all`}
               >
                 Wissenschaft
               </button>
               <button 
                 onClick={() => onNavigate('how-it-works')}
-                className={`${currentPage === 'how-it-works' ? 'text-white' : 'text-zinc-500'} hover:text-white transition-colors`}
+                className={`${currentPage === 'how-it-works' ? 'text-slate-900' : 'text-slate-400'} hover:text-slate-900 transition-all`}
               >
-                Funktionsweise
+                Funktion
               </button>
               <button 
                 onClick={() => onNavigate('about')}
-                className={`${currentPage === 'about' ? 'text-white' : 'text-zinc-500'} hover:text-white transition-colors`}
+                className={`${currentPage === 'about' ? 'text-slate-900' : 'text-slate-400'} hover:text-slate-900 transition-all`}
               >
                 Über uns
               </button>
@@ -59,26 +58,26 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onLogout, currentPage, isLo
             <>
               <button 
                 onClick={() => onNavigate('user-dashboard')}
-                className={`${currentPage === 'user-dashboard' ? 'text-white' : 'text-zinc-500'} hover:text-white transition-colors`}
+                className={`${currentPage === 'user-dashboard' ? 'text-slate-900' : 'text-slate-400'} hover:text-slate-900 transition-all`}
               >
                 Dashboard
               </button>
               <button 
                 onClick={() => onNavigate('science')}
-                className={`${currentPage === 'science' ? 'text-white' : 'text-zinc-500'} hover:text-white transition-colors`}
+                className={`${currentPage === 'science' ? 'text-slate-900' : 'text-slate-400'} hover:text-slate-900 transition-all`}
               >
                 Wissenschaft
               </button>
               <button 
                 onClick={() => onNavigate('recommendations')}
-                className={`${currentPage === 'recommendations' ? 'text-white' : 'text-zinc-500'} hover:text-white transition-colors flex items-center gap-2`}
+                className={`${currentPage === 'recommendations' ? 'text-slate-900' : 'text-slate-400'} hover:text-slate-900 transition-all flex items-center gap-2.5`}
               >
-                <Target size={14} className={currentPage === 'recommendations' ? 'text-red-500' : 'text-zinc-500'} />
+                <Target size={14} className={currentPage === 'recommendations' ? 'text-red-800' : 'text-slate-400'} />
                 Strategie
               </button>
               <button 
                 onClick={() => onNavigate('user-profile')}
-                className={`${currentPage === 'user-profile' ? 'text-white' : 'text-zinc-500'} hover:text-white transition-colors`}
+                className={`${currentPage === 'user-profile' ? 'text-slate-900' : 'text-slate-400'} hover:text-slate-900 transition-all`}
               >
                 Profil
               </button>
@@ -86,29 +85,29 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onLogout, currentPage, isLo
           )}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           {isLoggedIn ? (
             <button 
               onClick={onLogout}
-              className="group flex items-center gap-2 bg-white/5 hover:bg-red-600/10 border border-white/10 hover:border-red-500/50 text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all"
+              className="group flex items-center gap-2.5 bg-slate-50 hover:bg-slate-100 border border-slate-100 text-[#0F172A] px-6 py-2.5 rounded-2xl text-[10px] font-[800] uppercase tracking-[0.15em] transition-all"
             >
-              <LogOut size={14} className="text-zinc-400 group-hover:text-red-500 transition-colors" />
+              <LogOut size={14} className="text-slate-400 group-hover:text-red-800 transition-colors" />
               Abmelden
             </button>
           ) : (
             <>
               <button 
                 onClick={() => onNavigate('login')}
-                className="text-zinc-400 hover:text-white px-4 py-2 text-[10px] font-black uppercase tracking-widest transition-colors hidden sm:block"
+                className="text-slate-500 hover:text-slate-900 px-5 py-2.5 text-[11px] font-[800] uppercase tracking-[0.15em] transition-all hidden sm:block"
               >
                 Anmelden
               </button>
               <button 
                 onClick={() => onNavigate('home')}
-                className="group flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all shadow-lg shadow-red-600/30 active:scale-95"
+                className="group flex items-center gap-2.5 bg-[#0F172A] hover:bg-black text-white px-7 py-3 rounded-2xl text-[11px] font-[800] uppercase tracking-[0.15em] transition-all shadow-xl active:scale-95 btn-medical"
               >
                 Jetzt Starten
-                <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </>
           )}

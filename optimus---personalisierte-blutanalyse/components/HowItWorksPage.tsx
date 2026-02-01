@@ -1,51 +1,41 @@
-
 import React, { useState } from 'react';
 import { Package, Droplets, Send, BarChart3, ChevronDown, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 
 const steps = [
   {
-    title: "Bestellung & Lieferung",
-    description: "Dein persönliches Optimus Kit wird nach der Bestellung sofort verpackt. Wir liefern diskret und schnell innerhalb von 24-48 Stunden direkt an deine Haustür.",
-    icon: <Package className="w-10 h-10" />,
-    image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaad5b?auto=format&fit=crop&q=80&w=1000",
-    tags: ["Express Versand", "Diskret"],
-    color: "bg-zinc-100",
-    highlight: "24h Express-Logistik"
-  },
-  {
-    title: "Schmerzfreie Abnahme",
+    title: "Schmerzfreier Bluttest von zuhause",
     description: "Vergiss Nadeln. Das Tasso+ Device nutzt innovative Vakuum-Technologie. Einfach auf den Oberarm setzen, Knopf drücken und 5 Minuten entspannen. Fast unspürbar.",
     icon: <Droplets className="w-10 h-10" />,
-    image: "https://images.unsplash.com/photo-1579154235602-3c2cbfac543e?auto=format&fit=crop&q=80&w=1000",
+    image: "https://raw.githubusercontent.com/JonathanSpe/Optimus/main/optimus---personalisierte-blutanalyse/assets/Blood%20Draw%20Pic.png",
     tags: ["Patentiert", "In 5 Min."],
-    color: "bg-red-50",
+    color: "bg-red-50/50",
     highlight: "100% schmerzfrei & sicher"
   },
   {
-    title: "Probe Registrieren",
+    title: "Probe Registrierung und Versand",
     description: "Scanne den QR-Code auf deinem Kit mit der Optimus App. So verknüpfen wir deine Probe sicher mit deinem Profil. Dann einfach kostenfrei zurückschicken.",
     icon: <Send className="w-10 h-10" />,
-    image: "https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?auto=format&fit=crop&q=80&w=1000",
+    image: "https://raw.githubusercontent.com/JonathanSpe/Optimus/main/optimus---personalisierte-blutanalyse/assets/Letter%20Handover.jpg",
     tags: ["App-Sync", "Verschlüsselt"],
-    color: "bg-zinc-100",
+    color: "bg-zinc-100/50",
     highlight: "Ende-zu-Ende Verschlüsselung"
   },
   {
     title: "Deine Analyse",
     description: "Innerhalb von 4 Tagen nach Laboreingang erhältst du deinen digitalen Report. Wir übersetzen komplexe Daten in handfeste Empfehlungen für dein Leben.",
     icon: <BarChart3 className="w-10 h-10" />,
-    image: "https://images.unsplash.com/photo-1551288049-bbdac8626ad1?auto=format&fit=crop&q=80&w=1000",
+    image: "https://raw.githubusercontent.com/JonathanSpe/Optimus/main/optimus---personalisierte-blutanalyse/assets/Result%20Dashboard%20Page.jpg",
     tags: ["KI-Expertise", "Detailliert"],
-    color: "bg-red-50",
+    color: "bg-red-50/50",
     highlight: "Von Ärzten validierte Daten"
   },
   {
-    title: "Gezielte Optimierung",
-    description: "Bestelle deine individuell zusammengestellten Supplements und setze unsere Lifestyle-Empfehlungen um. Für optimale Ergebnisse ist die Einhaltung der spezifischen Verzehrempfehlungen und Dosierungen essenziell.",
+    title: "Empfehlungen",
+    description: "Bestelle deine individuell zusammengestellten Supplements und setze unsere Lifestyle-Empfehlungen um. Für optimale Ergebnisse ist die Einhaltung der spezifischen Verzehrempfehlungen essenziell.",
     icon: <Sparkles className="w-10 h-10" />,
-    image: "https://images.unsplash.com/photo-1550573105-18074d09252c?q=80&w=1000&auto=format&fit=crop",
+    image: "https://raw.githubusercontent.com/JonathanSpe/Optimus/main/optimus---personalisierte-blutanalyse/assets/Recommendations.jpg",
     tags: ["Personalisierung", "Dosierung", "Lifestyle"],
-    color: "bg-zinc-100",
+    color: "bg-zinc-100/50",
     highlight: "Optimale Dosierung & Ergebnisse"
   }
 ];
@@ -71,46 +61,46 @@ const faqs = [
 
 const HowItWorksPage: React.FC = () => {
   return (
-    <div className="bg-[#050505] text-white">
+    <div className="bg-[#fcfcfc] text-[#111827]">
       {/* Dynamic Hero Section */}
-      <section className="relative pt-40 pb-12 px-6 overflow-hidden border-b border-white/5">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-red-600/10 blur-[120px] rounded-full -z-10" />
+      <section className="relative pt-48 pb-24 px-6 overflow-hidden border-b border-black/[0.02]">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-red-600/[0.02] blur-[150px] rounded-full -z-10" />
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-zinc-400 text-xs font-bold tracking-widest uppercase mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-100 border border-black/[0.03] text-zinc-500 text-[10px] font-bold tracking-widest uppercase mb-8">
             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
             Der Optimus Weg
           </div>
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-6">
-            Einfach. Digital. <br /> <span className="text-red-600 italic">Revolutionär.</span>
+          <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8 text-[#111827]">
+            Einfach. Digital. <br /> <span className="text-zinc-900/40 italic">Revolutionär.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto leading-relaxed">
-            Wir haben den klassischen Bluttest neu erfunden. In 5 Schritten zu deiner vollständigen biologischen Optimierung.
+          <p className="text-xl md:text-2xl text-zinc-600 max-w-3xl mx-auto leading-relaxed font-semibold">
+            Wir haben den klassischen Bluttest neu erfunden. In 4 Schritten zu deiner persönlichen Höchstform.
           </p>
         </div>
       </section>
 
       {/* The Steps Section */}
-      <section className="bg-white py-24 px-6">
+      <section className="bg-white py-32 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col gap-24">
+          <div className="flex flex-col gap-32">
             {steps.map((step, index) => (
               <div 
                 key={step.title} 
-                className={`flex flex-col lg:flex-row items-center gap-10 lg:gap-16 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
+                className={`flex flex-col lg:flex-row items-center gap-16 lg:gap-24 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
               >
                 {/* Visual Side */}
                 <div className="flex-1 w-full relative">
-                  <div className={`absolute -inset-4 ${step.color} rounded-[3rem] -z-10`} />
-                  <div className="relative aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl border border-zinc-200 group">
+                  <div className={`absolute -inset-6 ${step.color} rounded-[4rem] -z-10 blur-xl opacity-50`} />
+                  <div className="relative aspect-video rounded-[3rem] overflow-hidden shadow-xl border border-black/[0.03] group bg-zinc-50">
                     <img 
                       src={step.image} 
                       alt={step.title} 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                      className="w-full h-full object-cover grayscale brightness-[1.05] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" 
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                    <div className="absolute bottom-8 left-8 flex gap-2">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                    <div className="absolute bottom-10 left-10 flex gap-2">
                       {step.tags.map(tag => (
-                        <span key={tag} className="px-3 py-1 rounded-full bg-white/90 text-black text-[10px] font-black uppercase tracking-wider shadow-sm">
+                        <span key={tag} className="px-4 py-1.5 rounded-full bg-white/90 text-[#111827] text-[9px] font-black uppercase tracking-wider shadow-sm backdrop-blur-sm border border-white/50">
                           {tag}
                         </span>
                       ))}
@@ -119,25 +109,28 @@ const HowItWorksPage: React.FC = () => {
                 </div>
 
                 {/* Content Side */}
-                <div className="flex-1 space-y-4">
-                  <div className="flex items-center gap-4">
-                    <span className="text-7xl font-black text-zinc-100">{index + 1}</span>
-                    <div className="p-3 bg-red-600 text-white rounded-xl shadow-lg shadow-red-600/20">
-                      {step.icon}
+                <div className="flex-1 space-y-6">
+                  <div className="flex items-center gap-6">
+                    {/* Improved step number contrast */}
+                    <div className="w-20 h-20 rounded-3xl bg-[#111827] flex items-center justify-center text-white shadow-xl shadow-zinc-900/10 rotate-3 hover:rotate-0 transition-all duration-500">
+                      <span className="text-5xl font-black">{index + 1}</span>
+                    </div>
+                    <div className="p-4 bg-zinc-50 text-[#111827] rounded-2xl border border-black/[0.03] shadow-sm">
+                      {React.cloneElement(step.icon as React.ReactElement<any>, { size: 24 })}
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <h2 className="text-3xl md:text-4xl font-black text-zinc-900 tracking-tight leading-tight">
+                  <div className="space-y-4">
+                    <h2 className="text-4xl md:text-5xl font-black text-[#111827] tracking-tight leading-tight">
                       {step.title}
                     </h2>
-                    <p className="text-lg text-zinc-500 leading-relaxed font-medium">
+                    <p className="text-xl text-[#374151] leading-relaxed font-semibold">
                       {step.description}
                     </p>
                   </div>
-                  <div className="pt-4 border-t border-zinc-100">
-                    <div className="flex items-center gap-2 text-red-600 font-bold">
-                      <CheckCircle2 size={20} />
-                      <span className="text-md">{step.highlight}</span>
+                  <div className="pt-8 border-t border-zinc-100">
+                    <div className="flex items-center gap-3 text-red-700 font-bold">
+                      <CheckCircle2 size={22} className="opacity-90" />
+                      <span className="text-lg uppercase tracking-tight">{step.highlight}</span>
                     </div>
                   </div>
                 </div>
@@ -148,44 +141,46 @@ const HowItWorksPage: React.FC = () => {
       </section>
 
       {/* Feature Highlight: The Tasso Device */}
-      <section className="py-24 px-6 bg-[#0a0a0a] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
-          <div className="flex-1 space-y-8">
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white leading-tight">
-              Die Hardware: <br /><span className="text-red-500 italic">Tasso+ Elite</span>
-            </h2>
-            <p className="text-xl text-zinc-400 leading-relaxed">
-              In Zusammenarbeit mit Tasso Inc. nutzen wir die weltweit fortschrittlichste Technologie zur kapillaren Blutgewinnung. Die schmerzfreie Alternative zur Nadel.
-            </p>
-            <ul className="space-y-4">
+      <section className="py-32 px-6 bg-[#fcfcfc] relative overflow-hidden border-y border-black/[0.02]">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-20">
+          <div className="flex-1 space-y-10">
+            <div className="space-y-4">
+              <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-[#111827] leading-none">
+                Die Hardware: <br /><span className="text-zinc-900/40 italic">Tasso+ Elite</span>
+              </h2>
+              <p className="text-xl text-[#374151] leading-relaxed font-bold">
+                In Zusammenarbeit mit Tasso Inc. nutzen wir die weltweit fortschrittlichste Technologie zur kapillaren Blutgewinnung. Die schmerzfreie Alternative zur Nadel.
+              </p>
+            </div>
+            <ul className="space-y-6">
               {[
                 "Vakuum-unterstützte Abnahme",
                 "Nur wenige Tropfen nötig",
                 "Klinisch validierte Genauigkeit",
                 "Hygienisch versiegeltes Einweg-System"
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-4 text-zinc-300 font-medium">
-                  <div className="w-6 h-6 rounded-full bg-red-600/10 border border-red-500/20 flex items-center justify-center">
-                    <CheckCircle2 className="text-red-500" size={14} />
+                <li key={i} className="flex items-center gap-5 text-[#111827] font-extrabold text-lg">
+                  <div className="w-8 h-8 rounded-xl bg-white border border-zinc-200 flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <CheckCircle2 className="text-red-700" size={18} />
                   </div>
                   {item}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="flex-1 w-full bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-[3.5rem] p-12 border border-white/5 relative">
-             <div className="absolute inset-0 bg-red-600/10 blur-[80px] -z-10" />
-             <div className="flex flex-col items-center text-center space-y-6">
-                <div className="w-full max-w-[400px] aspect-square bg-white rounded-full flex items-center justify-center p-8 shadow-2xl relative transform -rotate-2 hover:rotate-0 transition-transform border-8 border-zinc-100 overflow-hidden">
+          <div className="flex-1 w-full relative">
+             <div className="absolute inset-0 bg-red-600/[0.02] blur-[120px] rounded-full -z-10" />
+             <div className="bg-white rounded-[4rem] p-16 border border-black/[0.03] shadow-lg medical-card-shadow relative group">
+                <div className="w-full aspect-square flex items-center justify-center p-8 bg-zinc-50 rounded-[3rem] shadow-inner overflow-hidden">
                    <img 
-                    src="https://images.unsplash.com/photo-1583947581924-860bda6a26df?auto=format&fit=crop&q=80&w=1000" 
-                    alt="Optimus Tasso Device Visual" 
-                    className="max-w-full h-auto object-contain drop-shadow-lg scale-110"
+                    src="https://raw.githubusercontent.com/JonathanSpe/Optimus/main/optimus---personalisierte-blutanalyse/assets/Tasso%20Advice.png" 
+                    alt="Optimus Tasso Device" 
+                    className="max-w-full h-auto object-contain grayscale brightness-[1.05] group-hover:grayscale-0 transition-all duration-[1200ms]"
                    />
                 </div>
-                <div className="space-y-1">
-                  <p className="text-xs text-zinc-500 uppercase font-black tracking-widest">Patentierte Technologie</p>
-                  <p className="text-zinc-400 text-sm">Präzision auf Labor-Niveau</p>
+                <div className="mt-8 text-center space-y-2">
+                  <p className="text-[10px] text-zinc-400 uppercase font-black tracking-[0.3em]">Patentierte Technologie</p>
+                  <p className="text-[#111827] text-sm font-black">Klinische Präzision im Home-Format</p>
                 </div>
              </div>
           </div>
@@ -193,41 +188,42 @@ const HowItWorksPage: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-zinc-50 py-32 px-6">
+      <section className="bg-white py-40 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-black text-zinc-900 tracking-tight">Häufige Fragen</h2>
-            <p className="text-zinc-500 text-lg">Wissenswertes rund um deinen Optimus Test.</p>
+          <div className="text-center mb-24 space-y-4">
+            <h2 className="text-4xl md:text-6xl font-black text-[#111827] tracking-tighter">Häufige Fragen</h2>
+            <p className="text-zinc-500 text-xl font-bold">Wissenswertes rund um deinen Optimus Test.</p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-6">
             {faqs.map((faq, index) => (
               <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
             ))}
           </div>
           
-          <div className="mt-20 text-center">
-            <p className="text-zinc-400 mb-6 font-medium">Noch weitere Fragen?</p>
-            <button className="inline-flex items-center gap-2 text-zinc-900 font-black text-lg border-b-2 border-red-600 pb-1 hover:text-red-600 transition-colors">
-              Kontaktiere unseren Support <ArrowRight size={20} />
+          <div className="mt-24 text-center">
+            <p className="text-zinc-400 mb-8 font-black uppercase tracking-widest text-[10px]">Noch weitere Fragen?</p>
+            <button className="inline-flex items-center gap-3 text-[#111827] font-black text-xl border-b-4 border-red-600/30 pb-2 hover:border-red-600 transition-all group">
+              Kontaktiere unseren Support <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="bg-[#050505] py-24 px-6">
+      <section className="bg-[#fcfcfc] py-32 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="relative p-12 md:p-24 rounded-[4rem] bg-gradient-to-br from-red-600 to-red-900 overflow-hidden shadow-2xl group">
-            <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')] group-hover:scale-110 transition-transform duration-1000" />
-            <div className="relative z-10 flex flex-col items-center text-center space-y-10">
-              <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-none">
-                Zeit für <br /> ein <span className="italic">Upgrade.</span>
+          <div className="relative p-16 md:p-32 rounded-[5rem] bg-[#111827] overflow-hidden shadow-2xl group text-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-black to-zinc-800 opacity-90" />
+            <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')] group-hover:scale-110 transition-transform duration-[5s]" />
+            <div className="relative z-10 flex flex-col items-center space-y-12">
+              <h2 className="text-6xl md:text-[7rem] font-black text-white tracking-tighter leading-[0.85]">
+                Zeit für <br /> ein <span className="text-zinc-400 italic">Upgrade.</span>
               </h2>
-              <p className="text-red-100 text-xl md:text-2xl max-w-xl font-medium">
+              <p className="text-zinc-300 text-xl md:text-2xl max-w-xl font-medium leading-relaxed">
                 Bestelle jetzt dein Kit und starte deine Reise zur persönlichen Höchstform.
               </p>
-              <button className="bg-white text-red-600 px-12 py-5 rounded-2xl font-black text-2xl hover:bg-zinc-100 transition-all shadow-2xl hover:scale-105">
+              <button className="bg-white text-black px-16 py-6 rounded-[1.5rem] font-black text-2xl hover:bg-zinc-50 transition-all shadow-xl hover:scale-105 active:scale-95 btn-medical">
                 Kit jetzt bestellen
               </button>
             </div>
@@ -242,18 +238,18 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={`rounded-3xl border transition-all duration-300 ${isOpen ? 'bg-white border-zinc-200 shadow-xl' : 'bg-white/50 border-zinc-100 hover:border-zinc-200'}`}>
+    <div className={`rounded-[2rem] border transition-all duration-500 ${isOpen ? 'bg-zinc-50 border-zinc-200 shadow-sm' : 'bg-white border-zinc-100 hover:border-zinc-200'}`}>
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-8 flex items-center justify-between text-left"
+        className="w-full p-8 flex items-center justify-between text-left group"
       >
-        <span className={`font-bold text-xl transition-colors ${isOpen ? 'text-red-600' : 'text-zinc-900'}`}>{question}</span>
-        <div className={`w-10 h-10 rounded-full flex items-center justify-center border transition-all ${isOpen ? 'bg-red-600 border-red-600 text-white rotate-180' : 'bg-zinc-100 border-zinc-200 text-zinc-400'}`}>
-          <ChevronDown size={20} />
+        <span className={`font-black text-xl md:text-2xl tracking-tight transition-colors ${isOpen ? 'text-[#111827]' : 'text-zinc-600 group-hover:text-[#111827]'}`}>{question}</span>
+        <div className={`w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-500 ${isOpen ? 'bg-[#111827] border-black text-white rotate-180' : 'bg-zinc-50 border-zinc-200 text-zinc-400'}`}>
+          <ChevronDown size={24} />
         </div>
       </button>
-      <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className="p-8 pt-0 text-zinc-500 text-lg leading-relaxed font-medium">
+      <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className="p-10 pt-0 text-[#374151] text-lg md:text-xl leading-relaxed font-semibold">
           {answer}
         </div>
       </div>

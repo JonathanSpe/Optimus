@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
 
@@ -32,66 +31,66 @@ const testimonials: Testimonial[] = [
 
 const TestimonialsSection: React.FC = () => {
   return (
-    <section className="py-32 px-6 relative overflow-hidden">
+    <section className="py-20 px-6 relative bg-[#fcfcfc] border-y border-black/[0.02]">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col items-center text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-bold tracking-widest uppercase mb-6">
-            Rezensionen
+        <div className="flex flex-col items-center text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 border border-black/[0.03] text-zinc-500 text-[10px] font-bold uppercase tracking-widest mb-4">
+            Member Feedback
           </div>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-4">
-            Vertrauen durch <span className="text-red-500 italic">Ergebnisse</span>
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-3 text-[#333333]">
+            Vertrauen durch <span className="text-red-600/60 italic">Ergebnisse</span>
           </h2>
-          <p className="text-zinc-500 text-lg max-w-2xl">
+          <p className="text-zinc-500 text-lg max-w-2xl font-medium leading-relaxed">
             Tausende von Optimierern nutzen bereits unsere Technologie, um ihre biologischen Limits neu zu definieren.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <div 
               key={i} 
-              className="group relative p-8 rounded-[2.5rem] bg-glass border border-white/5 hover:border-red-500/30 transition-all duration-500"
+              className="group relative p-8 rounded-[2rem] bg-white border border-black/[0.03] hover:shadow-xl transition-all duration-500 medical-card-shadow"
             >
-              <div className="absolute top-8 right-8 text-white/5 group-hover:text-red-500/10 transition-colors">
-                <Quote size={48} />
+              <div className="absolute top-6 right-6 text-black/[0.02] group-hover:text-red-600/10 transition-colors">
+                <Quote size={40} />
               </div>
               
               <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-red-500 text-red-500" />
+                  <Star key={i} size={12} className="fill-red-600/60 text-red-600/20" />
                 ))}
               </div>
 
-              <p className="text-zinc-300 text-lg mb-8 leading-relaxed italic">
+              <p className="text-zinc-600 text-base mb-8 leading-relaxed font-medium">
                 "{t.comment}"
               </p>
 
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-red-500/50 transition-colors">
-                  <img src={t.image} alt={t.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-zinc-100 group-hover:border-red-600/40 transition-colors">
+                  <img src={t.image} alt={t.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white text-lg">{t.name}</h4>
-                  <p className="text-zinc-500 text-sm font-medium">{t.role}</p>
+                  <h4 className="font-bold text-[#333333] text-base leading-tight">{t.name}</h4>
+                  <p className="text-zinc-400 text-[10px] font-bold uppercase tracking-widest mt-0.5">{t.role}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Trust badge / Summary */}
-        <div className="mt-16 flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all">
+        {/* Summary badges */}
+        <div className="mt-12 flex flex-wrap justify-center items-center gap-10 opacity-60">
           <div className="flex flex-col items-center">
-             <span className="text-3xl font-black text-white">4.9/5</span>
-             <span className="text-xs uppercase tracking-widest font-bold text-zinc-500">Google Rating</span>
+             <span className="text-2xl font-black text-[#333333]">4.9/5</span>
+             <span className="text-[8px] uppercase tracking-widest font-bold text-zinc-400">Google Rating</span>
           </div>
           <div className="flex flex-col items-center">
-             <span className="text-3xl font-black text-white">TÜV</span>
-             <span className="text-xs uppercase tracking-widest font-bold text-zinc-500">Zertifiziert</span>
+             <span className="text-2xl font-black text-[#333333]">TÜV</span>
+             <span className="text-[8px] uppercase tracking-widest font-bold text-zinc-400">Zertifiziert</span>
           </div>
           <div className="flex flex-col items-center">
-             <span className="text-3xl font-black text-white">100%</span>
-             <span className="text-xs uppercase tracking-widest font-bold text-zinc-500">Datensicher</span>
+             <span className="text-2xl font-black text-[#333333]">100%</span>
+             <span className="text-[8px] uppercase tracking-widest font-bold text-zinc-400">Datensicher</span>
           </div>
         </div>
       </div>

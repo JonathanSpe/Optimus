@@ -63,32 +63,32 @@ const AIChat: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col h-[550px] bg-zinc-900/40 border border-white/5 rounded-[3rem] overflow-hidden red-glow-subtle group">
+    <div className="flex flex-col h-[600px] bg-white border border-black/[0.03] rounded-[2.5rem] overflow-hidden shadow-sm medical-card-shadow">
       {/* Chat Header */}
-      <div className="p-6 border-b border-white/5 bg-white/[0.02] flex items-center justify-between">
+      <div className="p-6 border-b border-black/[0.02] bg-zinc-50 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-red-600/10 border border-red-500/20 flex items-center justify-center text-red-500 shadow-[0_0_15px_rgba(239,68,68,0.1)]">
+          <div className="w-10 h-10 rounded-xl bg-white border border-black/[0.03] flex items-center justify-center text-zinc-400 shadow-sm">
             <Bot size={20} />
           </div>
           <div>
-            <h4 className="font-black text-white text-sm tracking-tight uppercase">Optimus AI</h4>
+            <h4 className="font-bold text-[#333333] text-sm tracking-tight uppercase">Optimus AI</h4>
             <div className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-              <span className="text-[9px] font-black text-zinc-500 uppercase tracking-widest">Performance Engine Live</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-sm animate-pulse"></span>
+              <span className="text-[8px] font-bold text-zinc-400 uppercase tracking-widest">Active Engine</span>
             </div>
           </div>
         </div>
-        <Sparkles size={16} className="text-red-500/40 group-hover:text-red-500 transition-colors" />
+        <Sparkles size={14} className="text-red-600/20" />
       </div>
 
       {/* Messages Area */}
       <div className="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-hide">
         {messages.map((m, i) => (
           <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-            <div className={`max-w-[85%] p-4 rounded-3xl text-sm leading-relaxed ${
+            <div className={`max-w-[85%] p-5 rounded-3xl text-sm leading-relaxed ${
               m.role === 'user' 
-                ? 'bg-red-600 text-white shadow-xl shadow-red-600/10' 
-                : 'bg-white/5 border border-white/5 text-zinc-300'
+                ? 'bg-[#333333] text-white shadow-md' 
+                : 'bg-zinc-50 border border-black/[0.02] text-zinc-600 font-medium'
             }`}>
               {m.text}
             </div>
@@ -96,9 +96,9 @@ const AIChat: React.FC = () => {
         ))}
         {isLoading && (
           <div className="flex justify-start">
-            <div className="bg-white/5 border border-white/5 p-4 rounded-3xl flex items-center gap-3 text-zinc-500">
+            <div className="bg-zinc-50 border border-black/[0.02] p-5 rounded-3xl flex items-center gap-3 text-zinc-400">
               <Loader2 size={16} className="animate-spin" />
-              <span className="text-[10px] font-black uppercase tracking-widest">Analysiere...</span>
+              <span className="text-[9px] font-bold uppercase tracking-widest">Processing...</span>
             </div>
           </div>
         )}
@@ -111,7 +111,7 @@ const AIChat: React.FC = () => {
           <button 
             key={i}
             onClick={() => handleSendMessage(q)}
-            className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[9px] font-black text-zinc-400 hover:text-white hover:border-red-500/40 transition-all uppercase tracking-widest"
+            className="px-3 py-1.5 rounded-full bg-zinc-50 border border-black/[0.03] text-[9px] font-bold text-zinc-400 hover:text-[#333333] hover:border-black/[0.1] transition-all uppercase tracking-widest"
           >
             {q}
           </button>
@@ -128,13 +128,13 @@ const AIChat: React.FC = () => {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Stelle eine Frage zu deinen Werten..."
-            className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-6 pr-14 text-sm text-white focus:border-red-500/50 focus:outline-none transition-all placeholder:text-zinc-600"
+            placeholder="Frag Optimus AI..."
+            className="w-full bg-zinc-50 border border-black/[0.03] rounded-2xl py-4 pl-6 pr-14 text-sm text-[#333333] focus:border-black/[0.1] focus:outline-none transition-all placeholder:text-zinc-300 font-medium"
           />
           <button 
             type="submit"
             disabled={isLoading || !input.trim()}
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg shadow-red-600/20"
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-[#333333] text-white flex items-center justify-center hover:bg-black disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-sm btn-medical"
           >
             <Send size={18} />
           </button>
