@@ -1,11 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FactsSection from './components/FactsSection';
 import PotentialSection from './components/PotentialSection';
-import TestimonialsSection from './components/TestimonialsSection';
 import PricingSection from './components/PricingSection';
+import TestimonialsSection from './components/TestimonialsSection';
 import Footer from './components/Footer';
 import SciencePage from './components/SciencePage';
 import HowItWorksPage from './components/HowItWorksPage';
@@ -20,7 +19,6 @@ const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<'home' | 'science' | 'how-it-works' | 'about' | 'supplements' | 'login' | 'user-dashboard' | 'user-profile' | 'recommendations'>('home');
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
-  // Scroll to top on page change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
@@ -69,11 +67,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen selection:bg-red-500/30">
-      {/* Background Orbs for Atmosphere */}
+    <div className="min-h-screen selection:bg-red-500/10 bg-[#fcfcfc] text-zinc-900">
+      {/* Background Orbs - Muted for clarity */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">
-        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-red-600/10 blur-[120px] rounded-full" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-red-900/10 blur-[100px] rounded-full" />
+        <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-red-600/[0.02] blur-[150px] rounded-full" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-zinc-200/30 blur-[120px] rounded-full" />
       </div>
 
       <Navbar onNavigate={setCurrentPage} onLogout={handleLogout} currentPage={currentPage} isLoggedIn={isLoggedIn} />
@@ -82,7 +80,6 @@ const App: React.FC = () => {
         {renderContent()}
       </main>
       
-      {/* Only show footer on public pages */}
       {['home', 'science', 'how-it-works', 'about', 'supplements'].includes(currentPage) && (
         <Footer onNavigate={setCurrentPage} />
       )}

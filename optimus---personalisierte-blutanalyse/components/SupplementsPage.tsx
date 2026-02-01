@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ShoppingCart, Star, ShieldCheck, Zap, HeartPulse, Info, ChevronRight, Filter } from 'lucide-react';
+import { ShoppingCart, Star, ShieldCheck, Zap, HeartPulse, Info, ChevronRight, Filter, ArrowRight } from 'lucide-react';
 
 interface Product {
   id: string;
@@ -95,31 +95,31 @@ const SupplementsPage: React.FC = () => {
     : products.filter(p => p.category === filter);
 
   return (
-    <div className="bg-[#050505] text-white pt-32 pb-24 min-h-screen">
+    <div className="bg-[#fcfcfc] text-[#333333] pt-32 pb-24 min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
         {/* Shop Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
+        <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-bold tracking-widest uppercase">
-              Evidenzbasierte Supplements
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 border border-black/[0.03] text-zinc-500 text-[10px] font-bold uppercase tracking-widest">
+              High-End Supplements
             </div>
-            <h1 className="text-5xl md:text-7xl font-black tracking-tighter">
-              Upgrade Deine <br /> <span className="text-red-600 italic">Molekulare</span> Basis.
+            <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-[#333333]">
+              Upgrade Deine <br /> <span className="text-zinc-400 italic">Molekulare</span> Basis.
             </h1>
-            <p className="text-zinc-500 text-lg max-w-xl">
-              Kein Blindflug mehr. Unsere Supplements sind perfekt auf deine Blutanalyse abgestimmt für messbare Ergebnisse.
+            <p className="text-zinc-500 text-xl font-medium max-w-xl leading-relaxed">
+              Evidenzbasierte Nährstoffe, perfekt abgestimmt auf deine Blutanalyse.
             </p>
           </div>
           
-          <div className="flex items-center gap-4 bg-white/5 p-2 rounded-2xl border border-white/10">
+          <div className="flex items-center gap-2 bg-white p-2 rounded-2xl border border-black/[0.03] shadow-sm">
             {categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                className={`px-5 py-2.5 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all ${
                   filter === cat 
-                    ? 'bg-red-600 text-white shadow-lg shadow-red-600/20' 
-                    : 'text-zinc-500 hover:text-white'
+                    ? 'bg-[#333333] text-white shadow-md' 
+                    : 'text-zinc-400 hover:text-black'
                 }`}
               >
                 {cat}
@@ -129,92 +129,104 @@ const SupplementsPage: React.FC = () => {
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {filteredProducts.map(product => (
             <div 
               key={product.id}
-              className="group relative bg-glass border border-white/5 rounded-[2.5rem] overflow-hidden hover:border-red-500/30 transition-all duration-500 hover:-translate-y-2"
+              className="group relative bg-white border border-black/[0.03] rounded-[2.5rem] overflow-hidden hover:shadow-xl transition-all duration-500 medical-card-shadow card-medical"
             >
               {product.isPopular && (
-                <div className="absolute top-6 right-6 z-10 bg-red-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
-                  Bestseller
+                <div className="absolute top-6 right-6 z-10 bg-white border border-black/[0.03] text-red-600 text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-sm">
+                  Popular Choice
                 </div>
               )}
               
               {/* Product Image */}
-              <div className="aspect-[4/3] w-full overflow-hidden bg-zinc-900 relative">
+              <div className="aspect-[4/3] w-full overflow-hidden bg-zinc-50 relative">
                 <img 
                   src={product.image} 
                   alt={product.name} 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 opacity-60 group-hover:opacity-100" 
+                  className="w-full h-full object-cover grayscale brightness-[1.05] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1000ms] opacity-80 group-hover:opacity-100" 
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent" />
               </div>
 
               {/* Product Content */}
-              <div className="p-8 space-y-6">
+              <div className="p-10 space-y-8">
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-red-500">
-                    <Zap size={12} /> {product.category}
+                  <div className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-400">
+                    <Zap size={12} className="text-red-600/40" /> {product.category}
                   </div>
-                  <h3 className="text-2xl font-black tracking-tight">{product.name}</h3>
+                  <h3 className="text-2xl font-black text-[#333333] tracking-tight">{product.name}</h3>
                   <div className="flex items-center gap-2">
-                    <div className="flex text-yellow-500">
+                    <div className="flex text-zinc-300">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={14} fill={i < Math.floor(product.rating) ? "currentColor" : "none"} />
+                        <Star key={i} size={12} className={i < 5 ? "fill-red-600/20 text-red-600/10" : ""} />
                       ))}
                     </div>
-                    <span className="text-xs text-zinc-500 font-bold">({product.reviews} Reviews)</span>
                   </div>
                 </div>
 
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {product.benefits.slice(0, 3).map((benefit, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-zinc-400">
-                      <ShieldCheck size={14} className="text-red-500" />
+                    <li key={i} className="flex items-center gap-3 text-sm text-zinc-500 font-medium">
+                      <div className="w-1 h-1 rounded-full bg-red-600/30" />
                       {benefit}
                     </li>
                   ))}
                 </ul>
 
-                <div className="pt-4 border-t border-white/5 flex items-center justify-between">
-                  <div className="text-3xl font-black">{product.price.toFixed(2)}€</div>
-                  <button className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-xl font-bold text-sm hover:bg-red-600 hover:text-white transition-all">
-                    In den Warenkorb <ShoppingCart size={16} />
+                <div className="pt-6 border-t border-black/[0.03] flex items-center justify-between">
+                  <div className="text-3xl font-black text-[#333333]">{product.price.toFixed(2)}€</div>
+                  <button className="flex items-center gap-2 bg-[#333333] text-white px-8 py-4 rounded-xl font-bold text-[10px] uppercase tracking-widest hover:bg-black transition-all shadow-md active:scale-95 btn-medical">
+                    Add to Pack <ShoppingCart size={14} />
                   </button>
-                </div>
-                
-                <div className="group/info mt-4 relative">
-                  <div className="flex items-center gap-2 text-[10px] font-bold text-zinc-600 cursor-help">
-                    <Info size={12} /> Die Wissenschaft dahinter
-                  </div>
-                  <div className="absolute bottom-full left-0 mb-4 w-full p-4 bg-zinc-900 border border-white/10 rounded-2xl opacity-0 invisible group-hover/info:opacity-100 group-hover/info:visible transition-all text-xs text-zinc-400 leading-relaxed shadow-2xl z-20">
-                    {product.scientificBacking}
-                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Personalized Pack CTA */}
-        <section className="mt-32 relative rounded-[4rem] bg-gradient-to-br from-zinc-900 to-black border border-white/5 p-12 md:p-20 overflow-hidden text-center">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-red-600/10 blur-[120px] rounded-full -z-10" />
-          <div className="max-w-3xl mx-auto space-y-8">
-            <HeartPulse size={48} className="mx-auto text-red-500" />
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">
-              Dein personalisiertes <span className="text-red-500">Optimus-Pack</span>
-            </h2>
-            <p className="text-xl text-zinc-400 font-medium">
-              Stoppe das Rätselraten. Wir stellen dir basierend auf deinen Blutwerten ein monatliches Pack zusammen. Nur das, was du wirklich brauchst.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-10 py-5 bg-red-600 rounded-2xl font-black text-xl hover:bg-red-700 transition-all shadow-xl shadow-red-600/20">
-                Blutanalyse starten
-              </button>
-              <button className="px-10 py-5 bg-white/5 border border-white/10 rounded-2xl font-black text-xl hover:bg-white/10 transition-all">
-                Mehr erfahren
-              </button>
+        {/* Personalized Pack CTA - UPDATED WITH IMAGE & THEME */}
+        <section className="mt-40 relative rounded-[4rem] bg-white border border-black/[0.03] p-12 md:p-24 overflow-hidden medical-card-shadow group">
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-red-600/[0.01] blur-[150px] rounded-full -z-10" />
+          
+          <div className="flex flex-col lg:flex-row items-center gap-20 relative z-10">
+            <div className="flex-1 space-y-10 text-center lg:text-left">
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-600/[0.03] border border-red-600/10 text-red-600 text-[10px] font-bold tracking-[0.2em] uppercase">
+                  <HeartPulse size={14} className="opacity-60" /> All-in-One Solution
+                </div>
+                <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight text-[#333333]">
+                  Dein <br /> <span className="text-zinc-400 italic">Optimus-Pack</span>
+                </h2>
+              </div>
+              <p className="text-xl text-zinc-500 font-medium leading-relaxed max-w-xl">
+                Keine Kompromisse mehr. Wir stellen dir basierend auf deinen individuellen Werten ein monatliches Pack zusammen — GMP-zertifiziert und exakt dosiert.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start pt-4">
+                <button className="group flex items-center justify-center gap-3 px-12 py-5 bg-[#333333] text-white rounded-2xl font-bold text-xl hover:bg-black transition-all shadow-lg active:scale-95 btn-medical">
+                  Analyse starten <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button className="px-10 py-5 bg-white border border-black/[0.05] rounded-2xl font-bold text-xl text-zinc-400 hover:text-black hover:bg-zinc-50 transition-all btn-medical shadow-sm">
+                  Lerne mehr
+                </button>
+              </div>
+            </div>
+            
+            <div className="flex-1 relative w-full max-w-md lg:max-w-none">
+              <div className="relative rounded-[3.5rem] overflow-hidden border border-black/[0.03] shadow-lg group-hover:scale-[1.01] transition-transform duration-1000 medical-card-shadow bg-zinc-50">
+                <img 
+                  src="https://raw.githubusercontent.com/JonathanSpe/Optimus/main/optimus---personalisierte-blutanalyse/assets/Tagesrationen%20Supplements.png" 
+                  alt="Optimus Daily Sachet Packs" 
+                  className="w-full h-auto object-cover grayscale brightness-[1.05] group-hover:grayscale-0 transition-all duration-[1200ms]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent" />
+                <div className="absolute bottom-10 left-10 right-10 p-6 bg-white/60 backdrop-blur-xl border border-black/[0.03] rounded-[2rem] shadow-sm">
+                   <p className="text-[9px] font-bold uppercase tracking-widest text-zinc-400 mb-1">Inhalt</p>
+                   <p className="text-sm font-bold text-[#333333] uppercase tracking-wider">30x Personalisierte Sachets</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

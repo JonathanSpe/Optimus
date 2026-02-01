@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, X, Star, ShieldCheck, Zap, ArrowRight, Clock, Percent, Microscope, UserCheck } from 'lucide-react';
 
@@ -55,83 +54,71 @@ const comparisonData = [
 
 const PricingSection: React.FC = () => {
   const renderValue = (val: any, highlight: boolean = false) => {
-    if (val === true) return <Check className={`mx-auto ${highlight ? 'text-red-500' : 'text-zinc-400'}`} size={20} strokeWidth={3} />;
-    if (val === false) return <X className="mx-auto text-zinc-800" size={20} strokeWidth={3} />;
-    if (typeof val === 'string' && val.includes('20%')) {
-      return (
-        <div className="flex flex-col items-center gap-1">
-          <Percent size={14} className={highlight ? 'text-red-500' : 'text-zinc-500'} />
-          <span className={`font-black text-[10px] uppercase tracking-widest ${highlight ? 'text-white' : 'text-zinc-500'}`}>{val}</span>
-        </div>
-      );
-    }
-    return <span className={`font-black text-[10px] uppercase tracking-widest ${highlight ? 'text-white' : 'text-zinc-500'}`}>{val}</span>;
+    if (val === true) return <Check className={`mx-auto ${highlight ? 'text-red-600' : 'text-zinc-400'}`} size={18} strokeWidth={3} />;
+    if (val === false) return <X className="mx-auto text-zinc-200" size={18} strokeWidth={2} />;
+    return <span className={`font-bold text-[9px] uppercase tracking-widest ${highlight ? 'text-zinc-900' : 'text-zinc-400'}`}>{val}</span>;
   };
 
   return (
-    <section id="pricing" className="py-24 px-6 relative overflow-hidden bg-[#050505]">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-600/5 blur-[150px] rounded-full pointer-events-none -z-10" />
-
+    <section id="pricing" className="py-20 px-6 bg-[#fcfcfc]">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-[10px] font-black uppercase tracking-[0.3em] mb-2">
+        <div className="text-center mb-12 space-y-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-600/[0.04] border border-red-600/10 text-red-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">
             Medizinischer Goldstandard
           </div>
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-none text-white">
-            Wähle dein <br /> <span className="text-red-600 italic text-6xl md:text-8xl">Upgrade Level.</span>
+          <h2 className="text-5xl md:text-6xl font-black tracking-tighter leading-none text-[#333333]">
+            Wähle dein <br /> <span className="text-zinc-400 italic">Upgrade Level.</span>
           </h2>
-          <p className="text-zinc-500 text-xl font-medium max-w-2xl mx-auto italic">
-            "Wer aufhört besser zu werden, hat aufgehört gut zu sein."
+          <p className="text-zinc-500 text-lg font-medium max-w-2xl mx-auto italic leading-relaxed">
+            Wissenschaftlich präzise Optimierung für jeden Anspruch.
           </p>
         </div>
 
-        <div className="overflow-x-auto pb-6">
-          <table className="w-full border-separate border-spacing-y-4 min-w-[900px]">
+        <div className="overflow-x-auto pb-8">
+          <table className="w-full border-separate border-spacing-y-3 min-w-[900px]">
             <thead>
               <tr className="text-left">
-                <th className="p-6 text-zinc-600 font-black uppercase tracking-[0.2em] text-[10px]">Dein Leistungsumfang</th>
-                <th className="p-8 bg-zinc-900/40 backdrop-blur-xl rounded-t-[3rem] border-x border-t border-white/5 w-1/4 group transition-all">
-                  <div className="text-zinc-500 font-black text-[10px] uppercase tracking-widest mb-2">Elite Plan</div>
+                <th className="p-4 text-zinc-400 font-bold uppercase tracking-[0.2em] text-[9px]">Leistungsumfang</th>
+                <th className="p-6 bg-white rounded-t-[2rem] border-x border-t border-black/[0.03] w-1/4 shadow-sm">
+                  <div className="text-zinc-400 font-bold text-[9px] uppercase tracking-widest mb-2">Elite Plan</div>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-black text-white">69€</span>
-                    <span className="text-xs text-zinc-600 font-bold">/ Mon.</span>
+                    <span className="text-3xl font-black text-[#333333]">69€</span>
+                    <span className="text-[10px] text-zinc-400 font-bold">/ Mon.</span>
                   </div>
                 </th>
-                <th className="p-8 bg-zinc-900 border-x border-t border-red-600/40 rounded-t-[3rem] relative w-1/4 shadow-[0_0_40px_rgba(239,68,68,0.1)]">
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full whitespace-nowrap animate-pulse">
-                    Professional Choice
+                <th className="p-6 bg-zinc-50 border-x border-t border-red-600/10 rounded-t-[2rem] relative w-1/4 shadow-md">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white border border-black/[0.03] text-red-600 text-[9px] font-bold uppercase tracking-[0.2em] px-4 py-1 rounded-full shadow-sm">
+                    Most Popular
                   </div>
-                  <div className="text-red-500 font-black text-[10px] uppercase tracking-widest flex items-center gap-2 mb-2">
-                    <Star size={14} fill="currentColor" /> Optimizer Plan
+                  <div className="text-red-600/60 font-bold text-[9px] uppercase tracking-widest flex items-center gap-2 mb-2">
+                    <Star size={10} fill="currentColor" /> Optimizer Plan
                   </div>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-5xl font-black text-white">29€</span>
-                    <span className="text-xs text-zinc-400 font-bold">/ Mon.</span>
+                    <span className="text-4xl font-black text-[#333333]">29€</span>
+                    <span className="text-[10px] text-zinc-400 font-bold">/ Mon.</span>
                   </div>
                 </th>
-                <th className="p-8 bg-black/40 rounded-t-[3rem] border-x border-t border-white/5 w-1/4 opacity-30">
-                  <div className="text-zinc-600 font-black text-[10px] uppercase tracking-widest mb-2">Hausarzt</div>
+                <th className="p-6 bg-white rounded-t-[2rem] border-x border-t border-black/[0.03] w-1/4 opacity-40">
+                  <div className="text-zinc-400 font-bold text-[9px] uppercase tracking-widest mb-2">Hausarzt</div>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-black text-zinc-700">150€+</span>
+                    <span className="text-3xl font-black text-zinc-300">150€+</span>
                   </div>
-                  <div className="text-[10px] text-zinc-700 font-black uppercase tracking-widest mt-1">Satz 1.35 GOÄ</div>
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="bg-white">
               {comparisonData.map((row, idx) => (
                 <tr key={idx} className="group">
-                  <td className="p-6 bg-white/[0.02] rounded-l-[2rem] border-l border-y border-white/5 font-bold text-zinc-400 text-sm group-hover:text-white transition-colors">
+                  <td className="p-5 rounded-l-[1.25rem] border-l border-y border-black/[0.03] font-bold text-zinc-600 text-sm group-hover:text-black transition-colors">
                     {row.feature}
                   </td>
-                  <td className="p-6 bg-zinc-900/20 border-y border-white/5 text-center">
+                  <td className="p-5 border-y border-black/[0.02] text-center">
                     {renderValue(row.elite)}
                   </td>
-                  <td className="p-6 bg-zinc-900/80 border-y border-x border-red-600/20 text-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-red-600/[0.02] group-hover:bg-red-600/[0.04] transition-all" />
-                    <div className="relative z-10">{renderValue(row.optimizer, true)}</div>
+                  <td className="p-5 bg-zinc-50/50 border-y border-x border-red-600/5 text-center relative">
+                    {renderValue(row.optimizer, true)}
                   </td>
-                  <td className="p-6 bg-black/20 border-y border-r border-white/5 rounded-r-[2rem] text-center opacity-30">
+                  <td className="p-5 border-y border-r border-black/[0.03] rounded-r-[1.25rem] text-center opacity-40">
                     {renderValue(row.doctor)}
                   </td>
                 </tr>
@@ -139,20 +126,20 @@ const PricingSection: React.FC = () => {
             </tbody>
             <tfoot>
               <tr>
-                <td className="p-6"></td>
-                <td className="p-6 text-center">
-                  <button className="w-full py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white hover:text-black transition-all font-black text-[10px] uppercase tracking-widest">
+                <td className="p-4"></td>
+                <td className="p-4">
+                  <button className="w-full py-3 rounded-xl bg-white border border-black/[0.05] hover:bg-zinc-50 text-[#333333] transition-all font-bold text-[9px] uppercase tracking-widest shadow-sm">
                     Elite Plan starten
                   </button>
                 </td>
-                <td className="p-6 text-center">
-                  <button className="w-full py-5 rounded-xl bg-red-600 text-white hover:bg-red-700 transition-all font-black text-xs uppercase tracking-[0.2em] shadow-2xl shadow-red-600/30 active:scale-95 flex items-center justify-center gap-2 group">
-                    Jetzt Optimizer werden <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                <td className="p-4">
+                  <button className="w-full py-4 rounded-xl bg-[#333333] text-white hover:bg-black transition-all font-bold text-[9px] uppercase tracking-[0.2em] shadow-lg flex items-center justify-center gap-2 group">
+                    Jetzt Optimizer werden <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
                   </button>
                 </td>
-                <td className="p-6">
-                  <div className="text-center text-zinc-700 text-[10px] font-black uppercase tracking-widest italic opacity-50">
-                    Veraltete Methodik
+                <td className="p-4">
+                  <div className="text-center text-zinc-300 text-[9px] font-bold uppercase tracking-widest italic">
+                    Referenz-Wert
                   </div>
                 </td>
               </tr>
@@ -160,21 +147,21 @@ const PricingSection: React.FC = () => {
           </table>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
            <TrustPoint 
-             icon={<Microscope className="text-red-500" />} 
+             icon={<Microscope className="text-zinc-400" size={20} />} 
              title="ISO 15189 Labore" 
-             desc="Alle Analysen werden ausschließlich in akkreditierten deutschen Fachlaboren durchgeführt." 
+             desc="Akkreditierte deutsche Fachlabore garantieren höchste Analysestandards." 
            />
            <TrustPoint 
-             icon={<UserCheck className="text-red-500" />} 
+             icon={<UserCheck className="text-zinc-400" size={20} />} 
              title="Ärztlicher Review" 
-             desc="Unsere Algorithmen werden von Fachärzten für Endokrinologie und Sportmedizin überwacht." 
+             desc="Unsere Methodik wird kontinuierlich von Fachärzten validiert." 
            />
            <TrustPoint 
-             icon={<ShieldCheck className="text-red-500" />} 
+             icon={<ShieldCheck className="text-zinc-400" size={20} />} 
              title="Banken-Sicherheit" 
-             desc="Deine Gesundheitsdaten sind nach Bankenstandard verschlüsselt und DSGVO-konform." 
+             desc="Deine Daten sind nach strengsten Standards DSGVO-konform gesichert." 
            />
         </div>
       </div>
@@ -183,9 +170,9 @@ const PricingSection: React.FC = () => {
 };
 
 const TrustPoint: React.FC<{ icon: React.ReactNode, title: string, desc: string }> = ({ icon, title, desc }) => (
-  <div className="p-8 rounded-[2.5rem] bg-zinc-900/50 border border-white/5 space-y-4 hover:border-red-500/20 transition-all group inner-glow">
-    <div className="w-12 h-12 rounded-2xl bg-red-600/10 flex items-center justify-center group-hover:scale-110 transition-transform">{icon}</div>
-    <h4 className="text-xl font-black text-white uppercase tracking-tight">{title}</h4>
+  <div className="p-8 rounded-[2rem] bg-white border border-black/[0.03] space-y-3 hover:shadow-lg transition-all group medical-card-shadow">
+    <div className="w-10 h-10 rounded-xl bg-zinc-50 flex items-center justify-center border border-black/[0.03] group-hover:scale-105 transition-transform">{icon}</div>
+    <h4 className="text-lg font-bold text-[#333333] uppercase tracking-tight">{title}</h4>
     <p className="text-zinc-500 text-sm leading-relaxed font-medium">{desc}</p>
   </div>
 );
