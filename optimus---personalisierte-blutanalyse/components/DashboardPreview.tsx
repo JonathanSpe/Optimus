@@ -126,7 +126,7 @@ export const DashboardPreview: React.FC<DashboardPreviewProps> = ({
           </div>
         </div>
 
-        {/* Right Column: Sidebar Controls & AI Insight */}
+        {/* Right Column: Sidebar Controls */}
         <div className="lg:col-span-5 space-y-4">
           <div className="bg-slate-50/50 rounded-[2.5rem] p-4 border border-slate-100">
             <p className="text-[7px] font-black text-slate-300 uppercase tracking-widest px-3 mb-3">Domain Indices</p>
@@ -142,17 +142,6 @@ export const DashboardPreview: React.FC<DashboardPreviewProps> = ({
                 <ChevronRight size={12} className={c.id === selectedCategory ? 'text-red-800' : 'text-slate-200'} />
               </div>
             ))}
-          </div>
-
-          <div className="p-6 bg-white border border-slate-100 rounded-[2.5rem] relative overflow-hidden group shadow-sm">
-            <div className="absolute top-0 right-0 p-5 opacity-[0.03] text-[#0F172A] group-hover:rotate-6 transition-transform"><Target size={40} /></div>
-            <div className="flex items-center gap-2 mb-3">
-               <div className="w-1.5 h-1.5 rounded-full bg-red-800" />
-               <p className="text-[7px] font-black uppercase tracking-[0.3em] text-slate-400">Targeted AI Insight</p>
-            </div>
-            <p className="text-[11px] font-bold italic text-[#0F172A] leading-relaxed pr-4">
-              "{selectedCategory === 'Athletik' ? 'O2-Transportkapazität auf Peak-Niveau durch stabilisiertes Ferritin.' : 'Systemstatus stabil. Alle klinischen Marker in der Zielzone.'}"
-            </p>
           </div>
         </div>
       </div>
