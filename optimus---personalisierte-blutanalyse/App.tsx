@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -5,6 +6,7 @@ import FactsSection from './components/FactsSection';
 import PotentialSection from './components/PotentialSection';
 import PricingSection from './components/PricingSection';
 import TestimonialsSection from './components/TestimonialsSection';
+import SecuritySection from './components/SecuritySection';
 import Footer from './components/Footer';
 import SciencePage from './components/SciencePage';
 import HowItWorksPage from './components/HowItWorksPage';
@@ -14,6 +16,7 @@ import LoginPage from './components/LoginPage';
 import UserDashboard from './components/UserDashboard';
 import UserProfile from './components/UserProfile';
 import RecommendationsPage from './components/RecommendationsPage';
+import AIChatOverlay from './components/AIChatOverlay';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<'home' | 'science' | 'how-it-works' | 'about' | 'supplements' | 'login' | 'user-dashboard' | 'user-profile' | 'recommendations'>('home');
@@ -43,6 +46,7 @@ const App: React.FC = () => {
             <PotentialSection />
             <TestimonialsSection />
             <PricingSection />
+            <SecuritySection />
           </>
         );
       case 'science':
@@ -83,6 +87,9 @@ const App: React.FC = () => {
       {['home', 'science', 'how-it-works', 'about', 'supplements'].includes(currentPage) && (
         <Footer onNavigate={setCurrentPage} />
       )}
+
+      {/* Global AI Chat Insight Engine */}
+      {isLoggedIn && <AIChatOverlay />}
     </div>
   );
 };

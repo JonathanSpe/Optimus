@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, PlayCircle, ShieldCheck, Smartphone } from 'lucide-react';
+import { ArrowRight, PlayCircle, ShieldCheck, Activity, Shield, Cpu, Microscope } from 'lucide-react';
 
 interface HeroProps {
   onNavigate: (page: any) => void;
@@ -8,24 +8,33 @@ interface HeroProps {
 const slides = [
   {
     url: 'https://raw.githubusercontent.com/JonathanSpe/Optimus/main/optimus---personalisierte-blutanalyse/assets/Athlete%20Apartment.png',
-    duration: 1200,
-    label: 'Lifestyle & Recovery'
+    duration: 3500,
+    label: 'Modern Lifestyle Analysis'
   },
   {
     url: 'https://raw.githubusercontent.com/JonathanSpe/Optimus/main/optimus---personalisierte-blutanalyse/assets/athlete%20sports.png',
-    duration: 1200,
-    label: 'Performance'
+    duration: 3500,
+    label: 'High-Performance Metrics'
   },
   {
     url: 'https://raw.githubusercontent.com/JonathanSpe/Optimus/main/optimus---personalisierte-blutanalyse/assets/Optimus%20Tasso.jpg',
-    duration: 1200,
-    label: 'Measurement'
+    duration: 3500,
+    label: 'Pain-Free Extraction'
   },
   {
     url: 'https://raw.githubusercontent.com/JonathanSpe/Optimus/main/optimus---personalisierte-blutanalyse/assets/Athlete%20results.jpg',
-    duration: 3000,
-    label: 'Optimization'
+    duration: 4500,
+    label: 'Deep Molecular Insights'
   }
+];
+
+const trustBadges = [
+  { icon: <ShieldCheck size={14} />, text: "DSGVO Konform" },
+  { icon: <ShieldCheck size={14} />, text: "ISO Zertifiziert" },
+  { icon: <Microscope size={14} />, text: "Doktor verifiziert" },
+  { icon: <Activity size={14} />, text: "Strava & Garmin Integrated" },
+  { icon: <Shield size={14} />, text: "Deutsche Datensicherheit" },
+  { icon: <Cpu size={14} />, text: "Transparente KI" },
 ];
 
 const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
@@ -40,122 +49,154 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   }, [activeIndex]);
 
   return (
-    <section className="relative pt-36 pb-24 px-6 overflow-hidden bg-[#F8FAFC]">
-      {/* Decorative Refined Blur */}
-      <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-red-800/[0.015] blur-[180px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-slate-200/20 blur-[150px] rounded-full pointer-events-none -z-10" />
+    <section className="relative min-h-[90vh] lg:min-h-screen flex items-center bg-[#F8FAFC] overflow-hidden px-6 lg:px-12">
+      {/* Dynamic Background Elements */}
+      <div className="absolute top-0 left-1/4 w-[700px] h-[700px] bg-red-800/[0.01] blur-[220px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute -bottom-12 -right-12 w-[500px] h-[500px] bg-slate-200/20 blur-[180px] rounded-full pointer-events-none -z-10" />
+      
+      {/* Thin Technical Grid Background */}
+      <div 
+        className="absolute inset-0 opacity-[0.012] pointer-events-none -z-10" 
+        style={{ backgroundImage: 'url(https://www.transparenttextures.com/patterns/carbon-fibre.png)' }}
+      />
 
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-          {/* Left Side: Content */}
-          <div className="flex-1 space-y-12 z-10 text-center lg:text-left">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-red-800/[0.03] border border-red-800/10 text-red-800 text-[11px] font-extrabold tracking-[0.25em] uppercase">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-800"></span>
-                </span>
-                Molecular Intelligence
-              </div>
-              
-              <h1 className="text-6xl lg:text-[7.8rem] font-[900] tracking-[-0.05em] leading-[0.82] text-[#0F172A] text-balance">
-                Was steckt <br /> <span className="text-red-800 italic font-[800]">wirklich</span> <br /> <span className="text-slate-400/50">in dir?</span>
+      <div className="max-w-7xl mx-auto w-full pt-28 lg:pt-24 pb-12 lg:pb-12">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 xl:gap-20">
+          
+          {/* Left Side: Text Content */}
+          <div className="w-full lg:w-[54%] xl:w-[50%] space-y-6 lg:space-y-8 z-10 text-center lg:text-left lg:-translate-y-8">
+            <div className="space-y-4 lg:space-y-6">
+              <h1 className="text-5xl md:text-7xl lg:text-[4.2rem] xl:text-[5rem] font-[900] tracking-[-0.06em] leading-[0.9] text-[#0F172A] text-balance">
+                Was steckt <br /> <span className="text-red-800 italic font-[800]">wirklich</span> <br /> <span className="text-slate-400/30">in dir?</span>
               </h1>
-            </div>
-            
-            <div className="space-y-8 max-w-xl mx-auto lg:mx-0">
-              <p className="text-2xl md:text-3xl text-slate-900 font-extrabold tracking-tight leading-tight">
-                Hole das Maximum aus Alltag, Job und Sport heraus.
-              </p>
-              <p className="text-slate-600 text-xl font-medium leading-relaxed">
-                Für Vitalität und hormonelle Balance. Dein erster Bluttest: Schmerzfrei, digital und von Zuhause — <span className="text-[#0F172A] font-extrabold underline decoration-red-800/[0.2] decoration-4 underline-offset-8">ab 29 Euro</span>.
-              </p>
+              
+              <div className="space-y-3 lg:space-y-4 max-w-xl mx-auto lg:mx-0">
+                <p className="text-xl md:text-2xl text-slate-900 font-extrabold tracking-tight leading-tight">
+                  Hole das Maximum aus Alltag, Job und Sport heraus.
+                </p>
+                <p className="text-slate-500 text-base lg:text-lg font-medium leading-relaxed">
+                  Für Vitalität und hormonelle Balance. Dein erster Bluttest: Schmerzfrei, digital und von Zuhause — <span className="text-[#0F172A] font-extrabold border-b-2 border-red-800/10 pb-0.5">ab 29 Euro</span>.
+                </p>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
-              <button className="flex items-center justify-center gap-4 bg-[#0F172A] hover:bg-black text-white px-12 py-5 rounded-[1.5rem] font-bold text-xl transition-all shadow-2xl active:scale-95 group shadow-slate-900/10 btn-medical">
-                Analyse Starten <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <button className="flex items-center justify-center gap-4 bg-[#0F172A] hover:bg-black text-white px-9 py-4 rounded-[1.1rem] font-extrabold text-base transition-all shadow-2xl active:scale-95 group shadow-slate-900/10 btn-medical">
+                Analyse Starten <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button 
                 onClick={() => onNavigate('how-it-works')}
-                className="flex items-center justify-center gap-4 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-900 px-10 py-5 rounded-[1.5rem] font-bold text-lg transition-all shadow-sm btn-medical"
+                className="flex items-center justify-center gap-3 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-900 px-8 py-4 rounded-[1.1rem] font-bold text-sm transition-all shadow-sm btn-medical"
               >
-                <PlayCircle className="w-6 h-6 text-red-800" /> Demo ansehen
+                <PlayCircle className="w-5 h-5 text-red-800" /> Demo ansehen
               </button>
             </div>
 
-            <div className="flex items-center justify-center lg:justify-start gap-10 pt-4 opacity-80">
-              <div className="flex items-center gap-2.5 text-[11px] font-extrabold uppercase tracking-[0.15em] text-slate-500">
-                <ShieldCheck size={16} className="text-red-800" /> DSGVO Konform
-              </div>
-              <div className="flex items-center gap-2.5 text-[11px] font-extrabold uppercase tracking-[0.15em] text-slate-500">
-                <ShieldCheck size={16} className="text-red-800" /> ISO Zertifiziert
+            {/* Marquee */}
+            <div className="relative w-full overflow-hidden pt-4 lg:pt-6 select-none border-t border-slate-200/40">
+              <div className="flex animate-marquee whitespace-nowrap gap-12">
+                {[...trustBadges, ...trustBadges].map((badge, idx) => (
+                  <div key={idx} className="flex items-center gap-2.5 text-[8px] lg:text-[9px] font-black uppercase tracking-[0.25em] text-slate-400">
+                    <span className="text-red-800/40">{badge.icon}</span>
+                    {badge.text}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Right Side: Storytelling Slideshow */}
-          <div className="flex-1 relative w-full max-w-2xl lg:max-w-none">
-            <div className="relative w-full aspect-[4/5] rounded-[4rem] overflow-hidden shadow-[0_32px_128px_-20px_rgba(0,0,0,0.12)] border border-slate-100 bg-white">
+          {/* Right Side: Larger Image Frame */}
+          <div className="w-full lg:w-[46%] xl:w-[50%] h-[350px] md:h-[450px] lg:h-[520px] xl:h-[580px] z-10 relative flex-shrink-0">
+            
+            <div className="relative w-full h-full rounded-[3.5rem] lg:rounded-[4.5rem] overflow-hidden shadow-[0_48px_100px_-24px_rgba(0,0,0,0.12)] border-[1px] border-slate-200/50 bg-white group">
+              
+              <div className="absolute inset-5 rounded-[2.8rem] lg:rounded-[3.8rem] border border-white/40 z-30 pointer-events-none" />
+              
+              <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden opacity-30">
+                <div className="w-full h-[1px] bg-red-800/30 shadow-[0_0_8px_rgba(153,27,27,0.2)] animate-scanline"></div>
+              </div>
+
               <div className="absolute inset-0 z-0">
                 {slides.map((slide, index) => (
                   <div
                     key={slide.url}
-                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                    className={`absolute inset-0 transition-opacity duration-1500 ease-in-out ${
                       index === activeIndex ? 'opacity-100' : 'opacity-0'
                     }`}
                   >
                     <img 
                       src={slide.url} 
                       alt={slide.label} 
-                      className={`w-full h-full object-cover grayscale brightness-[1.02] transition-transform duration-[6000ms] ease-out ${
-                        index === activeIndex ? 'scale-105' : 'scale-100'
+                      className={`w-full h-full object-cover grayscale brightness-[1.05] contrast-[1.05] transition-transform duration-[12000ms] ease-out ${
+                        index === activeIndex ? 'scale-110' : 'scale-100'
                       }`}
+                      style={{ objectPosition: 'center 20%' }}
                     />
+                    
+                    <div className={`absolute bottom-0 left-0 right-0 p-8 lg:p-12 bg-gradient-to-t from-black/50 via-black/5 to-transparent transition-all duration-1000 ${index === activeIndex ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
+                      <div className="flex items-center gap-4">
+                        <div className="w-[1px] h-8 bg-red-800/60" />
+                        <div>
+                          <p className="text-white text-base lg:text-xl font-[900] tracking-tighter uppercase italic leading-none">
+                            {slide.label}
+                          </p>
+                          <p className="text-white/40 text-[8px] font-bold uppercase tracking-[0.3em] mt-1.5">Molecular Visualization</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
 
-              {/* Overlay Glass UI for Context */}
-              <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent opacity-90 pointer-events-none" />
-              
-              <div className="absolute bottom-10 left-10 right-10 p-8 bg-white/50 backdrop-blur-2xl border border-white/30 rounded-[2.5rem] shadow-xl z-10 transition-all duration-700">
-                <div className="flex items-center justify-between">
-                  <div className="space-y-1.5">
-                    <div className="flex items-center gap-2.5">
-                      <Smartphone size={12} className="text-red-800" />
-                      <p className="text-[10px] text-slate-600 font-extrabold uppercase tracking-[0.2em]">Molecular System</p>
-                    </div>
-                    <div className="overflow-hidden">
-                      <p className="text-3xl font-[900] text-slate-900 tracking-tighter uppercase italic transition-all duration-500 transform">
-                        {activeIndex === 3 ? (
-                          <>Optimus <span className="text-red-800">Results</span></>
-                        ) : activeIndex === 2 ? (
-                          <>Optimus <span className="text-red-800">Tasso</span></>
-                        ) : (
-                          <>Optimus <span className="text-red-800">Health</span></>
-                        )}
-                      </p>
-                    </div>
+              <div className="absolute top-8 left-8 z-30 scale-90 lg:scale-100 origin-top-left">
+                <div className="group/badge inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/90 backdrop-blur-2xl border border-white/50 text-[#0F172A] shadow-2xl shadow-black/5 transition-all">
+                  <div className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-800"></span>
                   </div>
-                  
-                  {/* Progress Indicator */}
-                  <div className="flex gap-1.5 items-center">
-                    {slides.map((_, i) => (
-                      <div 
-                        key={i} 
-                        className={`h-1 rounded-full transition-all duration-700 ${
-                          i === activeIndex ? 'w-6 bg-red-800' : 'w-2 bg-slate-300'
-                        }`} 
-                      />
-                    ))}
+                  <div className="flex flex-col">
+                    <span className="text-[9px] font-black tracking-[0.12em] uppercase leading-none">Bio-Intelligence</span>
+                    <span className="text-[7px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">Neural Engine v2.5</span>
                   </div>
                 </div>
               </div>
+
+              <div className="absolute top-8 right-8 z-30 flex gap-1.5">
+                {slides.map((_, i) => (
+                  <div 
+                    key={i} 
+                    className={`h-0.5 rounded-full transition-all duration-700 ${
+                      i === activeIndex ? 'w-10 bg-white' : 'w-2 bg-white/30'
+                    }`} 
+                  />
+                ))}
+              </div>
+
             </div>
+
+            <div className="absolute -inset-10 bg-red-800/[0.015] blur-[80px] rounded-full -z-10 animate-pulse" />
           </div>
+
         </div>
       </div>
+
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes scanline {
+          0% { top: -10%; }
+          100% { top: 110%; }
+        }
+        .animate-marquee {
+          animation: marquee 35s linear infinite;
+        }
+        .animate-scanline {
+          position: absolute;
+          animation: scanline 12s linear infinite;
+        }
+      `}</style>
     </section>
   );
 };
