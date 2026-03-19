@@ -60,7 +60,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         style={{ backgroundImage: 'url(https://www.transparenttextures.com/patterns/carbon-fibre.png)' }}
       />
 
-      <div className="medical-page-container w-full pt-28 lg:pt-24 pb-8 lg:pb-10">
+      <div className="medical-page-container w-full pt-32 lg:pt-28 pb-8 lg:pb-10">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-14">
           
           {/* Left Side: Text Content */}
