@@ -105,27 +105,27 @@ const HowItWorksPage: React.FC = () => {
       </section>
 
       {/* The Steps Section */}
-      <section className="medical-section py-20 px-6">
+      <section className="medical-section py-16 px-6">
         <div className="medical-page-container">
-          <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-12">
             {steps.map((step, index) => (
               <div 
                 key={step.title} 
-                className={`flex flex-col lg:flex-row items-center gap-10 lg:gap-14 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
+                className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-10 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
               >
                 {/* Visual Side */}
                 <div className="flex-1 w-full relative">
-                  <div className={`absolute -inset-4 ${step.color} rounded-[2rem] -z-10 blur-lg opacity-45`} />
-                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-lg border border-black/[0.05] group bg-zinc-50">
+                  <div className={`absolute -inset-3 ${step.color} rounded-[1.5rem] -z-10 blur-lg opacity-40`} />
+                  <div className="relative aspect-[16/9] max-h-[290px] rounded-xl overflow-hidden shadow-md border border-black/[0.05] group bg-zinc-50">
                     <img 
                       src={step.image} 
                       alt={step.title} 
                       className="w-full h-full object-cover grayscale brightness-[1.05] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" 
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                    <div className="absolute bottom-6 left-6 flex gap-2">
+                    <div className="absolute bottom-4 left-4 flex gap-1.5">
                       {step.tags.map(tag => (
-                        <span key={tag} className="px-3 py-1 rounded-full bg-white/90 text-[#111827] text-[8px] font-black uppercase tracking-wider shadow-sm backdrop-blur-sm border border-white/50">
+                        <span key={tag} className="px-2.5 py-1 rounded-full bg-white/90 text-[#111827] text-[7px] font-black uppercase tracking-wider shadow-sm backdrop-blur-sm border border-white/50">
                           {tag}
                         </span>
                       ))}
@@ -134,27 +134,27 @@ const HowItWorksPage: React.FC = () => {
                 </div>
 
                 {/* Content Side */}
-                <div className="flex-1 space-y-5">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-2xl bg-[#111827] flex items-center justify-center text-white shadow-lg shadow-zinc-900/10 rotate-2 hover:rotate-0 transition-all duration-500">
-                      <span className="text-3xl font-black">{index + 1}</span>
+                <div className="flex-1 space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-11 h-11 rounded-xl bg-[#111827] flex items-center justify-center text-white shadow-md shadow-zinc-900/10 rotate-2 hover:rotate-0 transition-all duration-500">
+                      <span className="text-2xl font-black">{index + 1}</span>
                     </div>
-                    <div className="p-3 bg-zinc-50 text-[#111827] rounded-xl border border-black/[0.04] shadow-sm">
-                      {React.cloneElement(step.icon as React.ReactElement<any>, { size: 20 })}
+                    <div className="p-2.5 bg-zinc-50 text-[#111827] rounded-lg border border-black/[0.04] shadow-sm">
+                      {React.cloneElement(step.icon as React.ReactElement<any>, { size: 17 })}
                     </div>
                   </div>
-                  <div className="space-y-3">
-                    <h2 className="text-3xl md:text-4xl font-black text-[#111827] tracking-tight leading-tight">
+                  <div className="space-y-2">
+                    <h2 className="text-2xl md:text-3xl font-black text-[#111827] tracking-tight leading-tight">
                       {step.title}
                     </h2>
-                    <p className="text-base md:text-lg text-[#374151] leading-relaxed font-semibold">
+                    <p className="text-[15px] md:text-base text-[#374151] leading-relaxed font-semibold">
                       {step.description}
                     </p>
                   </div>
-                  <div className="pt-5 border-t border-zinc-100">
+                  <div className="pt-4 border-t border-zinc-100">
                     <div className="flex items-center gap-3 text-red-700 font-bold">
-                      <CheckCircle2 size={18} className="opacity-90" />
-                      <span className="text-sm uppercase tracking-tight">{step.highlight}</span>
+                      <CheckCircle2 size={16} className="opacity-90" />
+                      <span className="text-[12px] uppercase tracking-tight">{step.highlight}</span>
                     </div>
                   </div>
                 </div>

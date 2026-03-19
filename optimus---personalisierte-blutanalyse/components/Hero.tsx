@@ -60,7 +60,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         style={{ backgroundImage: 'url(https://www.transparenttextures.com/patterns/carbon-fibre.png)' }}
       />
 
-      <div className="medical-page-container w-full pt-24 lg:pt-20 pb-8 lg:pb-10">
+      <div className="medical-page-container w-full pt-28 lg:pt-24 pb-8 lg:pb-10">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-14">
           
           {/* Left Side: Text Content */}
@@ -106,7 +106,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           </div>
 
           {/* Right Side: Larger Image Frame */}
-          <div className="w-full lg:w-[46%] xl:w-[50%] h-[320px] md:h-[410px] lg:h-[470px] xl:h-[520px] z-10 relative flex-shrink-0">
+          <div className="w-full lg:w-[44%] xl:w-[47%] h-[290px] md:h-[360px] lg:h-[420px] xl:h-[470px] z-10 relative flex-shrink-0">
             
             <div className="relative w-full h-full rounded-xl overflow-hidden border border-slate-300/90 bg-white group shadow-[0_24px_60px_-24px_rgba(15,23,42,0.35)]">
               

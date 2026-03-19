@@ -44,11 +44,11 @@ const AboutPage: React.FC = () => {
   return (
     <div className="text-[#111827]">
       {/* MASSIVE HERO: Der Optimus Kodex */}
-      <section className="relative pt-32 pb-12 px-6 overflow-hidden medical-section border-b border-zinc-100">
+      <section className="relative pt-28 pb-10 px-6 overflow-hidden medical-section border-b border-zinc-100">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] bg-red-600/[0.02] blur-[150px] rounded-full -z-10" />
         
         {/* Large Decorative Text Background */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[12rem] lg:text-[18rem] font-black text-slate-50 select-none pointer-events-none z-0 tracking-tighter opacity-40">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[7rem] lg:text-[10rem] font-black text-slate-50 select-none pointer-events-none z-0 tracking-tighter opacity-40">
           VALUES
         </div>
 
@@ -57,7 +57,7 @@ const AboutPage: React.FC = () => {
              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-100 border border-zinc-200 text-zinc-600 text-[9px] font-black tracking-[0.2em] uppercase mb-2">
               The Optimus Standard
             </div>
-            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black tracking-tighter text-[#111827] leading-[0.8] mb-4">
+            <h1 className="text-4xl md:text-6xl lg:text-[7rem] font-black tracking-tighter text-[#111827] leading-[0.85] mb-3">
               Der Optimus <br /> <span className="text-red-800/20 italic font-[800]">Kodex.</span>
             </h1>
             <div className="flex items-center justify-center gap-4">
