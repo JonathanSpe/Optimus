@@ -88,44 +88,44 @@ const HowItWorksPage: React.FC = () => {
   return (
     <div className="text-[#111827]">
       {/* Dynamic Hero Section */}
-      <section className="relative pt-48 pb-24 px-6 overflow-hidden border-b border-black/[0.02]">
+      <section className="relative pt-36 pb-16 px-6 overflow-hidden border-b border-black/[0.02]">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-red-600/[0.02] blur-[150px] rounded-full -z-10" />
         <div className="medical-page-container flex flex-col items-center text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-100 border border-black/[0.03] text-zinc-500 text-[10px] font-bold tracking-widest uppercase mb-8">
             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
             Der Optimus Weg
           </div>
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8 text-[#111827]">
+          <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.92] mb-6 text-[#111827]">
             Einfach. Digital. <br /> <span className="text-zinc-900/40 italic">Revolutionär.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-zinc-600 max-w-3xl mx-auto leading-relaxed font-semibold">
+          <p className="text-lg md:text-xl text-zinc-600 max-w-3xl mx-auto leading-relaxed font-semibold">
             Wir haben den klassischen Bluttest neu erfunden. In 5 Schritten zu deiner persönlichen Höchstform.
           </p>
         </div>
       </section>
 
       {/* The Steps Section */}
-      <section className="medical-section py-32 px-6">
+      <section className="medical-section py-20 px-6">
         <div className="medical-page-container">
-          <div className="flex flex-col gap-32">
+          <div className="flex flex-col gap-16">
             {steps.map((step, index) => (
               <div 
                 key={step.title} 
-                className={`flex flex-col lg:flex-row items-center gap-16 lg:gap-24 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
+                className={`flex flex-col lg:flex-row items-center gap-10 lg:gap-14 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
               >
                 {/* Visual Side */}
                 <div className="flex-1 w-full relative">
-                  <div className={`absolute -inset-6 ${step.color} rounded-[4rem] -z-10 blur-xl opacity-50`} />
-                  <div className="relative aspect-video rounded-[3rem] overflow-hidden shadow-xl border border-black/[0.03] group bg-zinc-50">
+                  <div className={`absolute -inset-4 ${step.color} rounded-[2rem] -z-10 blur-lg opacity-45`} />
+                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-lg border border-black/[0.05] group bg-zinc-50">
                     <img 
                       src={step.image} 
                       alt={step.title} 
                       className="w-full h-full object-cover grayscale brightness-[1.05] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" 
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                    <div className="absolute bottom-10 left-10 flex gap-2">
+                    <div className="absolute bottom-6 left-6 flex gap-2">
                       {step.tags.map(tag => (
-                        <span key={tag} className="px-4 py-1.5 rounded-full bg-white/90 text-[#111827] text-[9px] font-black uppercase tracking-wider shadow-sm backdrop-blur-sm border border-white/50">
+                        <span key={tag} className="px-3 py-1 rounded-full bg-white/90 text-[#111827] text-[8px] font-black uppercase tracking-wider shadow-sm backdrop-blur-sm border border-white/50">
                           {tag}
                         </span>
                       ))}
@@ -134,27 +134,27 @@ const HowItWorksPage: React.FC = () => {
                 </div>
 
                 {/* Content Side */}
-                <div className="flex-1 space-y-6">
-                  <div className="flex items-center gap-6">
-                    <div className="w-20 h-20 rounded-3xl bg-[#111827] flex items-center justify-center text-white shadow-xl shadow-zinc-900/10 rotate-3 hover:rotate-0 transition-all duration-500">
-                      <span className="text-5xl font-black">{index + 1}</span>
+                <div className="flex-1 space-y-5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-2xl bg-[#111827] flex items-center justify-center text-white shadow-lg shadow-zinc-900/10 rotate-2 hover:rotate-0 transition-all duration-500">
+                      <span className="text-3xl font-black">{index + 1}</span>
                     </div>
-                    <div className="p-4 bg-zinc-50 text-[#111827] rounded-2xl border border-black/[0.03] shadow-sm">
-                      {React.cloneElement(step.icon as React.ReactElement<any>, { size: 24 })}
+                    <div className="p-3 bg-zinc-50 text-[#111827] rounded-xl border border-black/[0.04] shadow-sm">
+                      {React.cloneElement(step.icon as React.ReactElement<any>, { size: 20 })}
                     </div>
                   </div>
-                  <div className="space-y-4">
-                    <h2 className="text-4xl md:text-5xl font-black text-[#111827] tracking-tight leading-tight">
+                  <div className="space-y-3">
+                    <h2 className="text-3xl md:text-4xl font-black text-[#111827] tracking-tight leading-tight">
                       {step.title}
                     </h2>
-                    <p className="text-xl text-[#374151] leading-relaxed font-semibold">
+                    <p className="text-base md:text-lg text-[#374151] leading-relaxed font-semibold">
                       {step.description}
                     </p>
                   </div>
-                  <div className="pt-8 border-t border-zinc-100">
+                  <div className="pt-5 border-t border-zinc-100">
                     <div className="flex items-center gap-3 text-red-700 font-bold">
-                      <CheckCircle2 size={22} className="opacity-90" />
-                      <span className="text-lg uppercase tracking-tight">{step.highlight}</span>
+                      <CheckCircle2 size={18} className="opacity-90" />
+                      <span className="text-sm uppercase tracking-tight">{step.highlight}</span>
                     </div>
                   </div>
                 </div>
@@ -165,7 +165,7 @@ const HowItWorksPage: React.FC = () => {
       </section>
 
       {/* Feature Highlight: The Tasso Device */}
-      <section className="py-32 px-6 relative overflow-hidden border-y border-black/[0.02]">
+      <section className="py-20 px-6 relative overflow-hidden border-y border-black/[0.02]">
         <div className="medical-page-container flex flex-col md:flex-row items-center gap-20">
           <div className="flex-1 space-y-10">
             <div className="space-y-4">
@@ -212,7 +212,7 @@ const HowItWorksPage: React.FC = () => {
       </section>
 
       {/* Software & Insights Section - REDESIGNED VERTICAL STACK FOR FULL SIZE */}
-      <section className="medical-section py-32 px-6 overflow-hidden border-b border-black/[0.02]">
+      <section className="medical-section py-20 px-6 overflow-hidden border-b border-black/[0.02]">
         <div className="medical-page-container flex flex-col items-center gap-16">
           {/* Text content now at the top and centered */}
           <div className="w-full lg:w-3/4 space-y-10 text-center flex flex-col items-center">
@@ -313,9 +313,9 @@ const HowItWorksPage: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-white py-40 px-6">
+      <section className="bg-white py-24 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-24 space-y-4">
+          <div className="text-center mb-14 space-y-3">
             <h2 className="text-4xl md:text-6xl font-black text-[#111827] tracking-tighter">Häufige Fragen</h2>
             <p className="text-zinc-500 text-xl font-bold">Wissenswertes rund um deinen Optimus Test.</p>
           </div>
@@ -336,7 +336,7 @@ const HowItWorksPage: React.FC = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 px-6">
+      <section className="py-20 px-6">
         <div className="medical-page-container">
           <div className="relative p-16 md:p-32 rounded-[5rem] bg-[#111827] overflow-hidden shadow-2xl group text-center">
             <div className="absolute inset-0 bg-gradient-to-br from-black to-zinc-800 opacity-90" />

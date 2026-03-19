@@ -49,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   }, [activeIndex]);
 
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden px-6 lg:px-12">
+    <section className="relative min-h-[80vh] lg:min-h-[88vh] flex items-center overflow-hidden px-6 lg:px-12">
       {/* Dynamic Background Elements */}
       <div className="absolute top-0 left-1/4 w-[700px] h-[700px] bg-red-800/[0.01] blur-[220px] rounded-full pointer-events-none -z-10" />
       <div className="absolute -bottom-12 -right-12 w-[500px] h-[500px] bg-slate-200/20 blur-[180px] rounded-full pointer-events-none -z-10" />
@@ -60,22 +60,22 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         style={{ backgroundImage: 'url(https://www.transparenttextures.com/patterns/carbon-fibre.png)' }}
       />
 
-      <div className="medical-page-container w-full pt-28 lg:pt-24 pb-12 lg:pb-12">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 xl:gap-20">
+      <div className="medical-page-container w-full pt-24 lg:pt-20 pb-8 lg:pb-10">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-14">
           
           {/* Left Side: Text Content */}
-          <div className="w-full lg:w-[54%] xl:w-[50%] space-y-6 lg:space-y-8 z-10 text-center lg:text-left lg:-translate-y-8">
-            <div className="space-y-4 lg:space-y-6">
-              <h1 className="text-5xl md:text-7xl lg:text-[4.2rem] xl:text-[5rem] font-[900] tracking-[-0.06em] leading-[0.9] text-[#0F172A] text-balance">
+          <div className="w-full lg:w-[54%] xl:w-[50%] space-y-5 lg:space-y-6 z-10 text-center lg:text-left lg:-translate-y-4">
+            <div className="space-y-3 lg:space-y-5">
+              <h1 className="text-4xl md:text-6xl lg:text-[3.8rem] xl:text-[4.6rem] font-[900] tracking-[-0.055em] leading-[0.92] text-[#0F172A] text-balance">
                 Was steckt <br /> <span className="text-red-800 italic font-[800]">wirklich</span> <br /> <span className="text-slate-400/30">in dir?</span>
               </h1>
               
-              <div className="space-y-3 lg:space-y-4 max-w-xl mx-auto lg:mx-0">
-                <p className="text-xl md:text-2xl text-slate-900 font-extrabold tracking-tight leading-tight">
+              <div className="space-y-2.5 lg:space-y-3 max-w-xl mx-auto lg:mx-0">
+                <p className="text-lg md:text-xl text-slate-900 font-extrabold tracking-tight leading-tight">
                   Hole das Maximum aus Alltag, Job und Sport heraus.
                 </p>
-                <p className="text-slate-500 text-base lg:text-lg font-medium leading-relaxed">
-                  Für Vitalität und hormonelle Balance. Dein erster Bluttest: Schmerzfrei, digital und von Zuhause — <span className="text-[#0F172A] font-extrabold border-b-2 border-red-800/10 pb-0.5">ab 29 Euro</span>.
+                <p className="text-slate-500 text-[15px] lg:text-base font-medium leading-relaxed">
+                  Für Vitalität und hormonelle Balance. Dein erster Bluttest: Schmerzfrei, digital und von Zuhause — <span className="text-[#0F172A] font-extrabold border-b-2 border-red-800/10 pb-0.5">ab 89 Euro</span>.
                 </p>
               </div>
             </div>
@@ -93,7 +93,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             </div>
 
             {/* Marquee */}
-            <div className="relative w-full overflow-hidden pt-4 lg:pt-6 select-none border-t border-slate-200/40">
+            <div className="relative w-full overflow-hidden pt-3 lg:pt-4 select-none border-t border-slate-200/40">
               <div className="flex animate-marquee whitespace-nowrap gap-12">
                 {[...trustBadges, ...trustBadges].map((badge, idx) => (
                   <div key={idx} className="flex items-center gap-2.5 text-[8px] lg:text-[9px] font-black uppercase tracking-[0.25em] text-slate-400">
@@ -106,16 +106,12 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           </div>
 
           {/* Right Side: Larger Image Frame */}
-          <div className="w-full lg:w-[46%] xl:w-[50%] h-[350px] md:h-[450px] lg:h-[520px] xl:h-[580px] z-10 relative flex-shrink-0">
+          <div className="w-full lg:w-[46%] xl:w-[50%] h-[320px] md:h-[410px] lg:h-[470px] xl:h-[520px] z-10 relative flex-shrink-0">
             
-            <div className="relative w-full h-full rounded-[3.5rem] lg:rounded-[4.5rem] overflow-hidden border-[1px] border-slate-200/50 bg-white group medical-elevated">
+            <div className="relative w-full h-full rounded-xl overflow-hidden border border-slate-300/90 bg-white group shadow-[0_24px_60px_-24px_rgba(15,23,42,0.35)]">
               
-              <div className="absolute inset-5 rounded-[2.8rem] lg:rounded-[3.8rem] border border-white/40 z-30 pointer-events-none" />
+              <div className="absolute inset-3 rounded-md border border-white/35 z-30 pointer-events-none" />
               
-              <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden opacity-30">
-                <div className="w-full h-[1px] bg-red-800/30 shadow-[0_0_8px_rgba(153,27,27,0.2)] animate-scanline"></div>
-              </div>
-
               <div className="absolute inset-0 z-0">
                 {slides.map((slide, index) => (
                   <div
@@ -148,19 +144,6 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
                 ))}
               </div>
 
-              <div className="absolute top-8 left-8 z-30 scale-90 lg:scale-100 origin-top-left">
-                <div className="group/badge inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/90 backdrop-blur-2xl border border-white/50 text-[#0F172A] shadow-2xl shadow-black/5 transition-all">
-                  <div className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-800"></span>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[9px] font-black tracking-[0.12em] uppercase leading-none">Bio-Intelligence</span>
-                    <span className="text-[7px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">Neural Engine v2.5</span>
-                  </div>
-                </div>
-              </div>
-
               <div className="absolute top-8 right-8 z-30 flex gap-1.5">
                 {slides.map((_, i) => (
                   <div 
@@ -174,7 +157,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
 
             </div>
 
-            <div className="absolute -inset-10 bg-red-800/[0.015] blur-[80px] rounded-full -z-10 animate-pulse" />
+            <div className="absolute -inset-8 bg-red-800/[0.02] blur-[65px] rounded-xl -z-10" />
           </div>
 
         </div>
@@ -185,16 +168,8 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-        @keyframes scanline {
-          0% { top: -10%; }
-          100% { top: 110%; }
-        }
         .animate-marquee {
           animation: marquee 35s linear infinite;
-        }
-        .animate-scanline {
-          position: absolute;
-          animation: scanline 12s linear infinite;
         }
       `}</style>
     </section>
