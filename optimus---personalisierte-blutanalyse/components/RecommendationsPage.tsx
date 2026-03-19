@@ -283,8 +283,8 @@ const RecommendationsPage: React.FC<{ onNavigate: (page: any) => void }> = ({ on
   const totalPrice = subTotal - discountAmount;
 
   return (
-    <div className="min-h-screen bg-[#FDFDFD] pt-24 pb-16 px-6 text-[#0F172A]">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <div className="min-h-screen pt-24 pb-16 px-6 text-[#0F172A]">
+      <div className="medical-page-container space-y-12">
         
         {/* HEADER */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
@@ -307,7 +307,7 @@ const RecommendationsPage: React.FC<{ onNavigate: (page: any) => void }> = ({ on
               { label: 'Hormones', score: 88, delta: '-2', up: false },
               { label: 'Recovery', score: 85, delta: '+3', up: true }
             ].map((s, i) => (
-              <div key={i} className="bg-white border border-slate-100 p-4 rounded-[1.5rem] shadow-sm flex flex-col items-center justify-center min-w-[110px] medical-card-shadow border-b-2 border-b-slate-100/50">
+              <div key={i} className="medical-surface p-4 rounded-[1.5rem] shadow-sm flex flex-col items-center justify-center min-w-[110px] medical-card-shadow border-b-2 border-b-slate-100/50">
                 <span className="text-[7px] font-black text-zinc-400 uppercase tracking-widest leading-none mb-1">{s.label}</span>
                 <div className="flex items-baseline gap-1">
                   <span className="text-xl font-[900] tracking-tight">{s.score}</span>
@@ -322,7 +322,7 @@ const RecommendationsPage: React.FC<{ onNavigate: (page: any) => void }> = ({ on
         </div>
 
         {/* 1. DAILY RATION PACK - COMPACT REFINEMENT */}
-        <div className="bg-white border border-slate-100 rounded-[4rem] p-8 md:p-14 relative overflow-hidden shadow-sm medical-card-shadow">
+        <div className="medical-surface rounded-[4rem] p-8 md:p-14 relative overflow-hidden shadow-sm medical-card-shadow">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
             
             {/* LEFT: Concise Features & constrain image */}
@@ -417,7 +417,7 @@ const RecommendationsPage: React.FC<{ onNavigate: (page: any) => void }> = ({ on
 
         {/* 2. OPTIMIERUNGS ÜBERSICHT & NAV */}
         <div className="space-y-8">
-          <div className="bg-white border border-slate-100 rounded-[3rem] p-10 medical-card-shadow flex flex-col md:flex-row items-center gap-10">
+          <div className="medical-surface rounded-[3rem] p-10 medical-card-shadow flex flex-col md:flex-row items-center gap-10">
              <div className="w-20 h-20 rounded-3xl bg-red-800/[0.03] border border-red-800/10 flex items-center justify-center text-red-800 shadow-inner shrink-0">
                 <Target size={32} />
              </div>

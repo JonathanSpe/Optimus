@@ -95,8 +95,8 @@ const SupplementsPage: React.FC = () => {
     : products.filter(p => p.category === filter);
 
   return (
-    <div className="bg-[#fcfcfc] text-[#333333] pt-32 pb-24 min-h-screen">
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="text-[#333333] pt-32 pb-24 min-h-screen">
+      <div className="medical-page-container px-6">
         {/* Shop Header */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-12">
           <div className="space-y-3">
@@ -108,14 +108,14 @@ const SupplementsPage: React.FC = () => {
             </h1>
           </div>
           
-          <div className="flex items-center gap-1.5 bg-white p-1.5 rounded-2xl border border-black/[0.03] shadow-sm">
+          <div className="flex items-center gap-1.5 medical-surface p-1.5 rounded-2xl shadow-sm">
             {categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
                 className={`px-4 py-2 rounded-xl text-[9px] font-bold uppercase tracking-widest transition-all ${
                   filter === cat 
-                    ? 'bg-[#333333] text-white shadow-md' 
+                    ? 'bg-[#0F172A] text-white shadow-md' 
                     : 'text-zinc-400 hover:text-black'
                 }`}
               >
@@ -130,7 +130,7 @@ const SupplementsPage: React.FC = () => {
           {filteredProducts.map(product => (
             <div 
               key={product.id}
-              className="group relative bg-white border border-black/[0.03] rounded-[2rem] overflow-hidden hover:shadow-lg transition-all duration-500 card-medical flex flex-col"
+              className="group relative medical-surface rounded-[2rem] overflow-hidden hover:shadow-lg transition-all duration-500 card-medical flex flex-col"
             >
               {product.isPopular && (
                 <div className="absolute top-4 right-4 z-10 bg-white border border-black/[0.03] text-red-600 text-[7px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
@@ -179,7 +179,7 @@ const SupplementsPage: React.FC = () => {
 
                 <div className="pt-4 border-t border-black/[0.03] flex items-center justify-between gap-3">
                   <div className="text-xl font-black text-[#333333]">{product.price.toFixed(2)}€</div>
-                  <button className="flex items-center justify-center gap-2 bg-[#333333] text-white px-5 py-3 rounded-xl font-bold text-[8px] uppercase tracking-widest hover:bg-black transition-all shadow-md active:scale-95 btn-medical shrink-0">
+                  <button className="medical-btn medical-btn-primary px-5 py-3 text-[8px] shrink-0">
                     Add <ShoppingCart size={12} />
                   </button>
                 </div>
@@ -225,7 +225,7 @@ const SupplementsPage: React.FC = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button className="flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0F172A] rounded-xl font-black text-base hover:bg-slate-100 transition-all shadow-lg btn-medical">
+                <button className="medical-btn medical-btn-secondary px-8 py-4 normal-case tracking-normal text-base font-black">
                   Konfigurieren <ArrowRight size={16} />
                 </button>
               </div>

@@ -23,10 +23,10 @@ const UserProfile: React.FC<UserProfileProps> = ({ onLogout }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#fcfcfc] pt-32 pb-24 px-6 text-[#333333]">
-      <div className="max-w-4xl mx-auto space-y-12">
+    <div className="min-h-screen pt-32 pb-24 px-6 text-[#333333]">
+      <div className="medical-page-container max-w-4xl space-y-12">
         {/* Profile Header */}
-        <div className="flex flex-col sm:flex-row items-center gap-8 p-10 bg-white rounded-[3rem] border border-black/[0.03] medical-card-shadow relative overflow-hidden">
+        <div className="flex flex-col sm:flex-row items-center gap-8 p-10 medical-surface rounded-[3rem] medical-card-shadow relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/[0.01] blur-[80px] rounded-full -z-10" />
           <div className="w-28 h-28 rounded-full bg-zinc-50 border-4 border-white shadow-sm flex items-center justify-center overflow-hidden">
             <img 
@@ -53,7 +53,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ onLogout }) => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {integrations.map((app) => (
-              <div key={app.name} className={`p-6 rounded-[2rem] bg-white border ${app.color} flex items-center justify-between hover:bg-zinc-50 transition-all medical-card-shadow group`}>
+              <div key={app.name} className={`p-6 rounded-[2rem] medical-surface border ${app.color} flex items-center justify-between hover:bg-zinc-50 transition-all medical-card-shadow group`}>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-zinc-50 border border-black/[0.02] flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform">
                     {app.icon}
@@ -78,7 +78,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ onLogout }) => {
             {menuItems.map((item, i) => (
               <div 
                 key={i}
-                className="group flex items-center justify-between p-6 bg-white border border-black/[0.03] rounded-[2rem] hover:border-black/[0.1] hover:bg-zinc-50 transition-all cursor-pointer medical-card-shadow"
+                className="group flex items-center justify-between p-6 medical-surface rounded-[2rem] hover:border-black/[0.1] hover:bg-zinc-50 transition-all cursor-pointer medical-card-shadow"
               >
                 <div className="flex items-center gap-6">
                   <div className="w-14 h-14 rounded-2xl bg-zinc-50 border border-black/[0.02] flex items-center justify-center text-zinc-400 group-hover:text-red-600/60 transition-colors shadow-inner">
@@ -99,7 +99,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ onLogout }) => {
         </div>
 
         {/* Kit Order Section */}
-        <div className="p-10 bg-white border border-black/[0.03] rounded-[3rem] flex flex-col md:flex-row items-center gap-10 medical-card-shadow">
+        <div className="p-10 medical-surface rounded-[3rem] flex flex-col md:flex-row items-center gap-10 medical-card-shadow">
            <div className="w-20 h-20 rounded-3xl bg-red-600/[0.04] border border-red-600/10 flex items-center justify-center text-red-600 shadow-inner">
              <Package size={32} />
            </div>
@@ -107,7 +107,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ onLogout }) => {
              <h3 className="text-2xl font-black text-[#333333] tracking-tight uppercase italic">Next Supply Dispatch</h3>
              <p className="text-zinc-600 font-medium">Dein personalisierter Teebeutel-Vorrat wird am <span className="text-[#333333] font-bold">01. April 2024</span> automatisch versendet.</p>
            </div>
-           <button className="px-8 py-4 rounded-xl bg-[#333333] text-white font-bold text-[10px] uppercase tracking-widest hover:bg-black transition-all shadow-md active:scale-95">
+           <button className="medical-btn medical-btn-primary px-8 py-4 text-[10px]">
              Versand vorziehen
            </button>
         </div>

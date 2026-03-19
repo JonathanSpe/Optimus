@@ -19,57 +19,24 @@
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --medical-blue: #0F172A;
-            --clinical-red: #991B1B;
-            --lab-gray: #F1F5F9;
-            --border-muted: #E2E8F0;
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+              mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+            },
+            colors: {
+              medical: {
+                red: '#991B1B',
+                navy: '#0F172A'
+              }
+            }
+          }
         }
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #F8FAFC;
-            color: #0F172A;
-            letter-spacing: -0.015em;
-        }
-        .font-mono-data {
-            font-family: 'JetBrains Mono', monospace;
-            letter-spacing: -0.04em;
-        }
-        .medical-card-shadow {
-            box-shadow: 0 1px 2px rgba(0,0,0,0.02), 0 20px 60px -10px rgba(0,0,0,0.03);
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-thin::-webkit-scrollbar {
-            width: 4px;
-        }
-        .scrollbar-thin::-webkit-scrollbar-thumb {
-            background: #E2E8F0;
-            border-radius: 10px;
-        }
-        /* Sterile Grid Elements */
-        .lab-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 1px;
-            background-color: var(--border-muted);
-            border: 1px solid var(--border-muted);
-        }
-        /* Smooth transitions for high-density UI */
-        .transition-all {
-            transition-duration: 400ms;
-            transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-        }
-        /* Custom chart styling */
-        .recharts-cartesian-grid-horizontal line, 
-        .recharts-cartesian-grid-vertical line {
-            stroke: #F1F5F9;
-        }
-    </style>
-    <script type="module" src="./index.tsx"></script>
-<link rel="stylesheet" href="/index.css">
+      };
+    </script>
 </head>
 <body class="antialiased selection:bg-red-800/10">
     <div id="root"></div>

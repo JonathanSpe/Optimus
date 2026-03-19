@@ -49,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   }, [activeIndex]);
 
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen flex items-center bg-[#F8FAFC] overflow-hidden px-6 lg:px-12">
+    <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden px-6 lg:px-12">
       {/* Dynamic Background Elements */}
       <div className="absolute top-0 left-1/4 w-[700px] h-[700px] bg-red-800/[0.01] blur-[220px] rounded-full pointer-events-none -z-10" />
       <div className="absolute -bottom-12 -right-12 w-[500px] h-[500px] bg-slate-200/20 blur-[180px] rounded-full pointer-events-none -z-10" />
@@ -60,7 +60,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         style={{ backgroundImage: 'url(https://www.transparenttextures.com/patterns/carbon-fibre.png)' }}
       />
 
-      <div className="max-w-7xl mx-auto w-full pt-28 lg:pt-24 pb-12 lg:pb-12">
+      <div className="medical-page-container w-full pt-28 lg:pt-24 pb-12 lg:pb-12">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 xl:gap-20">
           
           {/* Left Side: Text Content */}
@@ -81,12 +81,12 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="flex items-center justify-center gap-4 bg-[#0F172A] hover:bg-black text-white px-9 py-4 rounded-[1.1rem] font-extrabold text-base transition-all shadow-2xl active:scale-95 group shadow-slate-900/10 btn-medical">
+              <button className="medical-btn medical-btn-primary flex items-center gap-4 px-9 py-4 normal-case tracking-normal text-base font-extrabold group">
                 Analyse Starten <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button 
                 onClick={() => onNavigate('how-it-works')}
-                className="flex items-center justify-center gap-3 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-900 px-8 py-4 rounded-[1.1rem] font-bold text-sm transition-all shadow-sm btn-medical"
+                className="medical-btn medical-btn-secondary flex items-center gap-3 px-8 py-4 normal-case tracking-normal text-sm font-bold"
               >
                 <PlayCircle className="w-5 h-5 text-red-800" /> Demo ansehen
               </button>
@@ -108,7 +108,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           {/* Right Side: Larger Image Frame */}
           <div className="w-full lg:w-[46%] xl:w-[50%] h-[350px] md:h-[450px] lg:h-[520px] xl:h-[580px] z-10 relative flex-shrink-0">
             
-            <div className="relative w-full h-full rounded-[3.5rem] lg:rounded-[4.5rem] overflow-hidden shadow-[0_48px_100px_-24px_rgba(0,0,0,0.12)] border-[1px] border-slate-200/50 bg-white group">
+            <div className="relative w-full h-full rounded-[3.5rem] lg:rounded-[4.5rem] overflow-hidden border-[1px] border-slate-200/50 bg-white group medical-elevated">
               
               <div className="absolute inset-5 rounded-[2.8rem] lg:rounded-[3.8rem] border border-white/40 z-30 pointer-events-none" />
               

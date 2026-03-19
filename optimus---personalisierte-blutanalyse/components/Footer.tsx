@@ -7,15 +7,15 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
-    <footer className="py-24 px-6 border-t border-black/[0.03] bg-white">
-      <div className="max-w-7xl mx-auto">
+    <footer className="py-24 px-6 border-t border-black/[0.03] medical-section">
+      <div className="medical-page-container">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
           <div className="space-y-4">
             <div 
               className="flex items-center gap-2 cursor-pointer group"
               onClick={() => onNavigate('home')}
             >
-              <div className="w-8 h-8 bg-[#333333] rounded-lg flex items-center justify-center font-bold text-xl group-hover:scale-105 transition-transform text-white">O</div>
+              <div className="w-8 h-8 medical-logo-badge rounded-lg flex items-center justify-center font-bold text-xl group-hover:scale-105 transition-transform text-white">O</div>
               <span className="text-xl font-bold tracking-tighter uppercase text-[#333333]">Optimus</span>
             </div>
             <p className="text-zinc-400 max-w-xs font-medium leading-relaxed">Dein Weg zu einer optimierten Gesundheit. Schmerzfrei, schnell und wissenschaftlich fundiert.</p>

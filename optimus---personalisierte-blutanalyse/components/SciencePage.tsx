@@ -129,10 +129,10 @@ const SciencePage: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#fcfcfc] text-[#333333]">
+    <div className="text-[#333333]">
       {/* SCIENCE HERO - Side-by-Side: Widened Image Side */}
       <section className="pt-32 pb-16 px-6 overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative z-10">
+        <div className="medical-page-container flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative z-10">
           
           {/* TEXT SIDE */}
           <div className="flex-[0.8] space-y-8 text-center lg:text-left">
@@ -216,8 +216,8 @@ const SciencePage: React.FC = () => {
         </div>
       </section>
 
-      <section className="px-6 py-20 bg-white border-y border-black/[0.02]">
-        <div className="max-w-7xl mx-auto">
+      <section className="px-6 py-20 medical-section">
+        <div className="medical-page-container">
           <div className="text-center mb-16 space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/[0.03] border border-red-600/10 text-red-600 text-[10px] font-bold tracking-widest uppercase mb-2">
               Diagnostik-Panel
@@ -245,7 +245,7 @@ const SciencePage: React.FC = () => {
               ))}
             </div>
 
-            <div className="flex-1 bg-white border border-black/[0.03] rounded-[3rem] p-8 md:p-12 medical-card-shadow relative">
+            <div className="flex-1 medical-surface rounded-[3rem] p-8 md:p-12 medical-card-shadow relative">
               {categories.map((cat) => cat.id === activeCategory && (
                 <div key={cat.id} className="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-10">
                   <div className="space-y-4">
@@ -279,8 +279,8 @@ const SciencePage: React.FC = () => {
         </div>
       </section>
 
-      <section className="px-6 py-20 bg-[#fcfcfc]">
-        <div className="max-w-7xl mx-auto space-y-16">
+      <section className="px-6 py-20">
+        <div className="medical-page-container space-y-16">
           <div className="text-center space-y-4">
             <span className="text-red-800 font-black uppercase tracking-[0.3em] text-[10px]">Ärztliche Leitung</span>
             <h2 className="text-4xl md:text-6xl font-black text-[#333333] tracking-tighter">Human-in-the-Loop</h2>
@@ -318,8 +318,8 @@ const SciencePage: React.FC = () => {
         </div>
       </section>
 
-      <section className="px-6 py-24 bg-white border-t border-black/[0.02] overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+      <section className="px-6 py-24 medical-section overflow-hidden">
+        <div className="medical-page-container">
           <div className="relative p-12 md:p-20 rounded-[4rem] bg-[#111827] text-white overflow-hidden shadow-2xl group">
              <div className="absolute top-0 right-0 p-20 opacity-[0.05] text-white pointer-events-none group-hover:scale-110 transition-transform duration-[5s]">
                 <Network size={300} />
@@ -385,7 +385,7 @@ const SciencePage: React.FC = () => {
           </div>
         </div>
       </section>
-      <div className="h-20 bg-[#fcfcfc]" />
+      <div className="h-20" />
     </div>
   );
 };

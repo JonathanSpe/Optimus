@@ -42,9 +42,9 @@ const AboutPage: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#fcfcfc] text-[#111827]">
+    <div className="text-[#111827]">
       {/* MASSIVE HERO: Der Optimus Kodex */}
-      <section className="relative pt-32 pb-12 px-6 overflow-hidden bg-white border-b border-zinc-100">
+      <section className="relative pt-32 pb-12 px-6 overflow-hidden medical-section border-b border-zinc-100">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] bg-red-600/[0.02] blur-[150px] rounded-full -z-10" />
         
         {/* Large Decorative Text Background */}
@@ -52,7 +52,7 @@ const AboutPage: React.FC = () => {
           VALUES
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="medical-page-container relative z-10">
           <div className="text-center mb-10 space-y-4">
              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-100 border border-zinc-200 text-zinc-600 text-[9px] font-black tracking-[0.2em] uppercase mb-2">
               The Optimus Standard
@@ -88,7 +88,7 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Secondary Statement - Reduced Padding */}
-      <section className="py-10 px-6 bg-[#fcfcfc]">
+      <section className="py-10 px-6">
         <div className="max-w-4xl mx-auto text-center space-y-2">
           <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-[#111827]">
             Präzision statt <span className="text-zinc-900/30 italic">Vermutung.</span>
@@ -100,8 +100,8 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Founders Section - More compact gaps */}
-      <section className="py-12 lg:py-16 px-6 bg-white border-y border-zinc-100">
-        <div className="max-w-7xl mx-auto space-y-12 lg:space-y-16">
+      <section className="py-12 lg:py-16 px-6 medical-section border-y border-zinc-100">
+        <div className="medical-page-container space-y-12 lg:space-y-16">
           {/* Jonathan */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-4">
@@ -170,8 +170,8 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Advisory Board - Tightened padding */}
-      <section className="py-12 lg:py-16 px-6 bg-[#fcfcfc]">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-12 lg:py-16 px-6">
+        <div className="medical-page-container">
           <div className="text-center mb-10 space-y-1">
             <span className="text-red-700 font-black uppercase tracking-[0.3em] text-[9px]">Wissenschaftliche Expertise</span>
             <h2 className="text-3xl md:text-5xl font-black text-[#111827] tracking-tighter leading-none">Medizinisches Competence Center</h2>

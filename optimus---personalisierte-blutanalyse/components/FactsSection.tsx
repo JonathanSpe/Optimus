@@ -3,8 +3,8 @@ import React from 'react';
 
 const FactsSection: React.FC = () => {
   return (
-    <section className="py-8 lg:py-12 px-6 relative overflow-hidden bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="medical-section py-8 lg:py-12 px-6 relative overflow-hidden">
+      <div className="medical-page-container">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-6 lg:gap-10">
           <div className="max-w-2xl space-y-2">
             <div className="inline-flex items-center gap-2">
@@ -23,7 +23,7 @@ const FactsSection: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
           {/* Fact 1 */}
-          <div className="group relative p-6 lg:p-8 rounded-[2rem] border border-slate-100 bg-white hover:border-slate-200 transition-all duration-700 overflow-hidden shadow-sm hover:shadow-xl card-medical">
+          <div className="group relative p-6 lg:p-8 medical-stat-card hover:border-slate-300 transition-all duration-700 overflow-hidden card-medical">
             <div className="absolute top-0 right-0 w-64 h-64 bg-red-800/[0.01] rounded-full -mr-32 -mt-32 blur-[80px] group-hover:bg-red-800/[0.03] transition-all duration-1000" />
             <div className="relative z-10 space-y-4">
               <div className="flex items-baseline gap-3">
@@ -45,7 +45,7 @@ const FactsSection: React.FC = () => {
           </div>
 
           {/* Fact 2 */}
-          <div className="group relative p-6 lg:p-8 rounded-[2rem] border border-slate-100 bg-white hover:border-slate-200 transition-all duration-700 overflow-hidden shadow-sm hover:shadow-xl card-medical">
+          <div className="group relative p-6 lg:p-8 medical-stat-card hover:border-slate-300 transition-all duration-700 overflow-hidden card-medical">
             <div className="absolute top-0 right-0 w-64 h-64 bg-red-800/[0.01] rounded-full -mr-32 -mt-32 blur-[80px] group-hover:bg-red-800/[0.03] transition-all duration-1000" />
             <div className="relative z-10 space-y-4">
               <div className="flex items-baseline gap-3">

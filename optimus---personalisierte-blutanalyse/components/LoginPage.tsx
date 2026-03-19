@@ -16,45 +16,45 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onNavigate }) => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fcfcfc] flex items-center justify-center px-6 py-20">
+    <div className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="w-full max-w-md relative">
-        <div className="absolute inset-0 bg-red-600/[0.02] blur-[120px] rounded-full -z-10" />
+        <div className="absolute inset-0 bg-red-700/[0.06] blur-[120px] rounded-full -z-10" />
         
-        <div className="bg-white rounded-[3rem] p-12 border border-black/[0.03] space-y-12 shadow-xl medical-card-shadow">
+        <div className="medical-surface medical-elevated rounded-[2.25rem] p-12 space-y-12">
           <div className="text-center space-y-4">
-            <div className="w-14 h-14 bg-[#333333] rounded-[1.25rem] mx-auto flex items-center justify-center font-bold text-2xl text-white shadow-lg">O</div>
+            <div className="w-14 h-14 medical-logo-badge mx-auto flex items-center justify-center font-bold text-2xl text-white">O</div>
             <div className="space-y-2">
-              <h1 className="text-4xl font-black tracking-tighter text-[#333333]">Willkommen</h1>
-              <p className="text-zinc-500 text-sm font-medium">Logge dich ein, um deine Daten zu synchronisieren.</p>
+              <h1 className="text-4xl medical-title font-black tracking-tighter text-slate-900">Willkommen</h1>
+              <p className="text-slate-500 text-sm font-medium">Logge dich ein, um deine Daten sicher zu synchronisieren.</p>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
-              <label className="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-4">Email Addresse</label>
+              <label className="medical-label">Email Adresse</label>
               <div className="relative">
-                <Mail className="absolute left-6 top-1/2 -translate-y-1/2 text-zinc-300" size={18} />
+                <Mail className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
                 <input 
                   type="email" 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@optimus.com"
-                  className="w-full bg-zinc-50 border border-black/[0.03] rounded-2xl py-4.5 pl-16 pr-6 text-[#333333] focus:border-black/[0.1] focus:outline-none transition-all placeholder:text-zinc-300 font-medium"
+                  className="medical-input"
                   required
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <label className="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-4">Passwort</label>
+              <label className="medical-label">Passwort</label>
               <div className="relative">
-                <Lock className="absolute left-6 top-1/2 -translate-y-1/2 text-zinc-300" size={18} />
+                <Lock className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
                 <input 
                   type="password" 
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full bg-zinc-50 border border-black/[0.03] rounded-2xl py-4.5 pl-16 pr-6 text-[#333333] focus:border-black/[0.1] focus:outline-none transition-all placeholder:text-zinc-300 font-medium"
+                  className="medical-input"
                   required
                 />
               </div>
@@ -70,7 +70,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onNavigate }) => {
 
             <button 
               type="submit"
-              className="w-full bg-[#333333] text-white py-5 rounded-2xl font-black text-lg hover:bg-black transition-all shadow-md flex items-center justify-center gap-3 group active:scale-[0.98] btn-medical"
+              className="medical-btn medical-btn-primary w-full py-5 text-sm"
             >
               Anmelden <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </button>
@@ -82,17 +82,17 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onNavigate }) => {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <button className="flex items-center justify-center gap-3 bg-zinc-50 border border-black/[0.03] py-4 rounded-2xl hover:bg-zinc-100 transition-all btn-medical">
-              <Chrome size={18} className="text-[#333333]" /> <span className="text-[10px] font-black uppercase tracking-widest text-zinc-600">Google</span>
+            <button className="medical-btn medical-btn-secondary py-4 text-[10px]">
+              <Chrome size={18} className="text-slate-700" /> <span>Google</span>
             </button>
-            <button className="flex items-center justify-center gap-3 bg-zinc-50 border border-black/[0.03] py-4 rounded-2xl hover:bg-zinc-100 transition-all btn-medical">
-              <Github size={18} className="text-[#333333]" /> <span className="text-[10px] font-black uppercase tracking-widest text-zinc-600">GitHub</span>
+            <button className="medical-btn medical-btn-secondary py-4 text-[10px]">
+              <Github size={18} className="text-slate-700" /> <span>GitHub</span>
             </button>
           </div>
 
-          <p className="text-center text-sm text-zinc-500 font-medium leading-relaxed">
+          <p className="text-center text-sm text-slate-500 font-medium leading-relaxed">
             Noch kein Optimus Mitglied? <br />
-            <button onClick={() => onNavigate('home')} className="text-[#333333] font-bold underline decoration-red-600/20 underline-offset-4 hover:decoration-red-600/40 transition-all">Jetzt Test bestellen</button>
+            <button onClick={() => onNavigate('home')} className="text-slate-900 font-bold underline decoration-red-600/20 underline-offset-4 hover:decoration-red-600/40 transition-all">Jetzt Test bestellen</button>
           </p>
         </div>
       </div>

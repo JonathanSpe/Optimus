@@ -86,11 +86,11 @@ const HowItWorksPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-[#fcfcfc] text-[#111827]">
+    <div className="text-[#111827]">
       {/* Dynamic Hero Section */}
       <section className="relative pt-48 pb-24 px-6 overflow-hidden border-b border-black/[0.02]">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-red-600/[0.02] blur-[150px] rounded-full -z-10" />
-        <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
+        <div className="medical-page-container flex flex-col items-center text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-100 border border-black/[0.03] text-zinc-500 text-[10px] font-bold tracking-widest uppercase mb-8">
             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
             Der Optimus Weg
@@ -105,8 +105,8 @@ const HowItWorksPage: React.FC = () => {
       </section>
 
       {/* The Steps Section */}
-      <section className="bg-white py-32 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="medical-section py-32 px-6">
+        <div className="medical-page-container">
           <div className="flex flex-col gap-32">
             {steps.map((step, index) => (
               <div 
@@ -165,8 +165,8 @@ const HowItWorksPage: React.FC = () => {
       </section>
 
       {/* Feature Highlight: The Tasso Device */}
-      <section className="py-32 px-6 bg-[#fcfcfc] relative overflow-hidden border-y border-black/[0.02]">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-20">
+      <section className="py-32 px-6 relative overflow-hidden border-y border-black/[0.02]">
+        <div className="medical-page-container flex flex-col md:flex-row items-center gap-20">
           <div className="flex-1 space-y-10">
             <div className="space-y-4">
               <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-[#111827] leading-none">
@@ -212,8 +212,8 @@ const HowItWorksPage: React.FC = () => {
       </section>
 
       {/* Software & Insights Section - REDESIGNED VERTICAL STACK FOR FULL SIZE */}
-      <section className="py-32 px-6 bg-white overflow-hidden border-b border-black/[0.02]">
-        <div className="max-w-7xl mx-auto flex flex-col items-center gap-16">
+      <section className="medical-section py-32 px-6 overflow-hidden border-b border-black/[0.02]">
+        <div className="medical-page-container flex flex-col items-center gap-16">
           {/* Text content now at the top and centered */}
           <div className="w-full lg:w-3/4 space-y-10 text-center flex flex-col items-center">
             <div className="space-y-4">
@@ -336,8 +336,8 @@ const HowItWorksPage: React.FC = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-[#fcfcfc] py-32 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-32 px-6">
+        <div className="medical-page-container">
           <div className="relative p-16 md:p-32 rounded-[5rem] bg-[#111827] overflow-hidden shadow-2xl group text-center">
             <div className="absolute inset-0 bg-gradient-to-br from-black to-zinc-800 opacity-90" />
             <div 
@@ -351,7 +351,7 @@ const HowItWorksPage: React.FC = () => {
               <p className="text-zinc-300 text-xl md:text-2xl max-w-xl font-medium leading-relaxed">
                 Bestelle jetzt dein Kit und starte deine Reise zur persönlichen Höchstform.
               </p>
-              <button className="bg-white text-black px-16 py-6 rounded-[1.5rem] font-black text-2xl hover:bg-zinc-50 transition-all shadow-xl hover:scale-105 active:scale-95 btn-medical">
+              <button className="medical-btn medical-btn-secondary px-16 py-6 normal-case tracking-normal text-2xl font-black hover:scale-105">
                 Kit jetzt bestellen
               </button>
             </div>
