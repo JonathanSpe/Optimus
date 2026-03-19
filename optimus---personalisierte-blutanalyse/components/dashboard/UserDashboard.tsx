@@ -137,19 +137,23 @@ const UserDashboard: React.FC<{ onNavigate: (page: any) => void }> = ({ onNaviga
                 selectedKey={selectedKey} 
                 onSelect={setSelectedKey} 
               />
+              <div className="px-8 py-5 border-t border-slate-200 bg-slate-50/60">
+                <p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-500">
+                  Selected Domain: <span className="text-red-800">{activeData.label}</span> - Evolution block updated below
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-[3.5rem] border border-slate-200 bg-gradient-to-b from-slate-50/40 via-white to-white p-4 md:p-6">
+              <AnalysisPanel activeData={activeData} onNavigate={onNavigate} />
             </div>
           </div>
 
           {/* Right Summary Column */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-4 space-y-6">
             <SummarySidebar />
+            <SidebarHub />
           </div>
-        </div>
-
-        {/* Secondary Detailed Data */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          <AnalysisPanel activeData={activeData} onNavigate={onNavigate} />
-          <SidebarHub />
         </div>
       </div>
     </div>

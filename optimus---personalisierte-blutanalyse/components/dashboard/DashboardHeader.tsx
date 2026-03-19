@@ -9,7 +9,6 @@ export const DashboardHeader: React.FC = () => {
          <div className="flex items-center gap-4">
             <h1 className="text-4xl lg:text-5xl font-black tracking-tighter leading-none uppercase text-[#0F172A]">Biometric <span className="text-slate-300 italic">Feed</span></h1>
          </div>
-         <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em]">Optimus Clinical Protocol v5.2_Enterprise</p>
       </div>
 
       <div className="flex-1 flex flex-col md:flex-row items-center gap-4 w-full max-w-4xl">
