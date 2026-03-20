@@ -9,6 +9,25 @@ import { Activity, HeartPulse } from 'lucide-react';
 
 const SummarySidebar: React.FC = () => (
   <div className="flex flex-col gap-4">
+    {/* Overall Status Score */}
+    <div className="bg-[#0f172a] p-10 rounded-[3rem] border border-white/5 text-white space-y-8 relative overflow-hidden group shadow-2xl">
+      <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-red-800/10 blur-[60px] rounded-full group-hover:bg-red-800/20 transition-all" />
+      <div className="flex items-center justify-between relative z-10">
+        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/60">Overall Status Score</span>
+        <Activity size={18} className="text-white/20" />
+      </div>
+      <div className="flex items-baseline gap-2 relative z-10">
+        <span className="text-7xl font-mono-data font-black text-white tracking-tighter leading-none">91</span>
+        <span className="text-white text-2xl font-black">%</span>
+      </div>
+      <div className="pt-6 border-t border-white/10 space-y-4 relative z-10">
+        <p className="text-[11px] font-bold text-white/80 uppercase tracking-widest leading-relaxed">System status: High performance ready. HPG axis optimized.</p>
+        <button className="w-full py-4 bg-white/5 border border-white/10 rounded-2xl text-[10px] font-black uppercase tracking-widest text-white/80 hover:bg-white hover:text-slate-900 transition-all">
+          View Neural Profile
+        </button>
+      </div>
+    </div>
+
     {/* Biological Age Card */}
     <div className="bg-white p-10 rounded-[3rem] border border-slate-200 medical-card-shadow space-y-8 relative overflow-hidden group">
       <div className="absolute top-0 right-0 p-8 opacity-[0.03] text-red-800 pointer-events-none group-hover:scale-110 transition-transform duration-700">
@@ -27,25 +46,6 @@ const SummarySidebar: React.FC = () => (
           Epigenetic methylation analysis suggests a physiological aging rate significantly below chronological norm.
         </p>
         <button className="text-[9px] font-black uppercase tracking-widest text-slate-300 hover:text-slate-900 transition-colors">View Epigenetic Mapping</button>
-      </div>
-    </div>
-
-    {/* Overall Status Score */}
-    <div className="bg-[#0f172a] p-10 rounded-[3rem] border border-white/5 text-white space-y-8 relative overflow-hidden group shadow-2xl">
-      <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-red-800/10 blur-[60px] rounded-full group-hover:bg-red-800/20 transition-all" />
-      <div className="flex items-center justify-between relative z-10">
-        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/60">Overall Status Score</span>
-        <Activity size={18} className="text-white/20" />
-      </div>
-      <div className="flex items-baseline gap-2 relative z-10">
-        <span className="text-7xl font-mono-data font-black text-white tracking-tighter leading-none">91</span>
-        <span className="text-white text-2xl font-black">%</span>
-      </div>
-      <div className="pt-6 border-t border-white/10 space-y-4 relative z-10">
-        <p className="text-[11px] font-bold text-white/80 uppercase tracking-widest leading-relaxed">System status: High performance ready. HPG axis optimized.</p>
-        <button className="w-full py-4 bg-white/5 border border-white/10 rounded-2xl text-[10px] font-black uppercase tracking-widest text-white/80 hover:bg-white hover:text-slate-900 transition-all">
-          View Neural Profile
-        </button>
       </div>
     </div>
   </div>
@@ -67,8 +67,12 @@ const UserDashboard: React.FC<{ onNavigate: (page: any) => void }> = ({ onNaviga
           {/* Main Section: Biomarkers + Evolution (no visual gap) */}
           <div className="lg:col-span-8 bg-white rounded-[3.5rem] border border-slate-200 medical-card-shadow overflow-hidden relative">
             <MolecularOrbit categories={categories} selectedKey={selectedKey} onSelect={setSelectedKey} />
-            <div className="border-t border-slate-200" />
-            <div className="px-6 pb-6 pt-3">
+            <div className="border-t border-slate-200 bg-slate-50/50 px-6 py-4">
+              <p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-500">
+                Evolution and Clinical Insights
+              </p>
+            </div>
+            <div className="px-6 pb-6 pt-1">
               <AnalysisPanel activeData={activeData} onNavigate={onNavigate} />
             </div>
           </div>
