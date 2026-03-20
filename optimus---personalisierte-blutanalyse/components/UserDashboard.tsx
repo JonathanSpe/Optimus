@@ -5,17 +5,17 @@ import { MolecularOrbit } from './dashboard/MolecularOrbit';
 import { AnalysisPanel } from './dashboard/AnalysisPanel';
 import { SidebarHub } from './dashboard/SidebarHub';
 import { categoryData } from './dashboard/DashboardData';
-import { Activity, HeartPulse, ShieldAlert } from 'lucide-react';
+import { Activity, HeartPulse } from 'lucide-react';
 
 const SummarySidebar: React.FC = () => (
   <div className="flex flex-col gap-4">
-    {/* Clinical Delta Card */}
+    {/* Biological Age Card */}
     <div className="bg-white p-10 rounded-[3rem] border border-slate-200 medical-card-shadow space-y-8 relative overflow-hidden group">
       <div className="absolute top-0 right-0 p-8 opacity-[0.03] text-red-800 pointer-events-none group-hover:scale-110 transition-transform duration-700">
         <HeartPulse size={120} />
       </div>
       <div className="flex items-center justify-between relative z-10">
-        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">Biological Delta</span>
+        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">Biological Age</span>
         <div className="px-2 py-1 bg-emerald-50 border border-emerald-100 rounded-lg text-[8px] font-black text-emerald-600 uppercase tracking-widest">Optimal</div>
       </div>
       <div className="flex items-baseline gap-3 relative z-10">
@@ -62,28 +62,22 @@ const UserDashboard: React.FC<{ onNavigate: (page: any) => void }> = ({ onNaviga
         
         <DashboardHeader />
 
-        {/* Primary Analytical Grid */}
+        {/* Unified Dashboard Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* Main Visual Anchor */}
-          <div className="lg:col-span-8 bg-white rounded-[3.5rem] border border-slate-200 medical-card-shadow overflow-hidden relative group">
-            <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000 1.5px, transparent 0)', backgroundSize: '32px 32px' }} />
-            <MolecularOrbit 
-              categories={categories} 
-              selectedKey={selectedKey} 
-              onSelect={setSelectedKey} 
-            />
+          {/* Main Section: Biomarkers + Evolution (no visual gap) */}
+          <div className="lg:col-span-8 bg-white rounded-[3.5rem] border border-slate-200 medical-card-shadow overflow-hidden relative">
+            <MolecularOrbit categories={categories} selectedKey={selectedKey} onSelect={setSelectedKey} />
+            <div className="border-t border-slate-200" />
+            <div className="px-6 pb-6 pt-3">
+              <AnalysisPanel activeData={activeData} onNavigate={onNavigate} />
+            </div>
           </div>
 
-          {/* Right Summary Column */}
-          <div className="lg:col-span-4">
+          {/* Right Sidebar: independent and fixed to right column */}
+          <div className="lg:col-span-4 space-y-6 self-start lg:sticky lg:top-24">
             <SummarySidebar />
+            <SidebarHub />
           </div>
-        </div>
-
-        {/* Detailed Secondary Information Architecture */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          <AnalysisPanel activeData={activeData} onNavigate={onNavigate} />
-          <SidebarHub />
         </div>
       </div>
     </div>
