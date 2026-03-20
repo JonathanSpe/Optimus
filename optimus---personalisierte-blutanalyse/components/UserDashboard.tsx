@@ -5,7 +5,6 @@ import { MolecularOrbit } from './dashboard/MolecularOrbit';
 import { AnalysisPanel } from './dashboard/AnalysisPanel';
 import { SidebarHub } from './dashboard/SidebarHub';
 import { categoryData } from './dashboard/DashboardData';
-import AIChat from './AIChat';
 import { Activity, HeartPulse } from 'lucide-react';
 
 const SummarySidebar: React.FC = () => (
@@ -75,14 +74,6 @@ const UserDashboard: React.FC<{ onNavigate: (page: any) => void }> = ({ onNaviga
             </div>
             <div className="px-6 pb-6 pt-1">
               <AnalysisPanel activeData={activeData} onNavigate={onNavigate} />
-            </div>
-            <div className="border-t border-slate-200 bg-slate-50/50 px-6 py-4">
-              <p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-500">
-                AI Insight
-              </p>
-            </div>
-            <div className="px-6 pb-8 pt-2">
-              <AIChat />
             </div>
           </div>
 
