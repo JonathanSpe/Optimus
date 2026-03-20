@@ -60,21 +60,21 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         style={{ backgroundImage: 'url(https://www.transparenttextures.com/patterns/carbon-fibre.png)' }}
       />
 
-      <div className="medical-page-container w-full pt-32 lg:pt-28 pb-8 lg:pb-10">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-14">
+      <div className="medical-page-container w-full pt-32 lg:pt-28 pb-10 lg:pb-12">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-12 xl:gap-16">
           
           {/* Left Side: Text Content */}
-          <div className="w-full lg:w-[54%] xl:w-[50%] space-y-5 lg:space-y-6 z-10 text-center lg:text-left lg:-translate-y-4">
-            <div className="space-y-3 lg:space-y-5">
-              <h1 className="text-4xl md:text-6xl lg:text-[3.8rem] xl:text-[4.6rem] font-[900] tracking-[-0.055em] leading-[0.92] text-[#0F172A] text-balance">
+          <div className="w-full lg:w-[54%] xl:w-[50%] space-y-6 lg:space-y-7 z-10 text-center lg:text-left lg:-translate-y-2">
+            <div className="space-y-4 lg:space-y-5">
+              <h1 className="text-4xl md:text-6xl lg:text-[3.55rem] xl:text-[4.2rem] font-[900] medical-heading-xl text-[#0F172A] text-balance">
                 Was steckt <br /> <span className="text-red-800 italic font-[800]">wirklich</span> <br /> <span className="text-slate-400/30">in dir?</span>
               </h1>
               
-              <div className="space-y-2.5 lg:space-y-3 max-w-xl mx-auto lg:mx-0">
-                <p className="text-lg md:text-xl text-slate-900 font-extrabold tracking-tight leading-tight">
+              <div className="space-y-3 max-w-xl mx-auto lg:mx-0">
+                <p className="text-[1.05rem] md:text-[1.25rem] text-slate-900 font-extrabold tracking-tight leading-tight">
                   Hole das Maximum aus Alltag, Job und Sport heraus.
                 </p>
-                <p className="text-slate-500 text-[15px] lg:text-base font-medium leading-relaxed">
+                <p className="medical-copy text-[15px] lg:text-[15px] font-medium">
                   Für Vitalität und hormonelle Balance. Dein erster Bluttest: Schmerzfrei, digital und von Zuhause — <span className="text-[#0F172A] font-extrabold border-b-2 border-red-800/10 pb-0.5">ab 89 Euro</span>.
                 </p>
               </div>
@@ -93,10 +93,10 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             </div>
 
             {/* Marquee */}
-            <div className="relative w-full overflow-hidden pt-3 lg:pt-4 select-none border-t border-slate-200/40">
+            <div className="relative w-full overflow-hidden pt-4 lg:pt-5 select-none border-t border-slate-200/50">
               <div className="flex animate-marquee whitespace-nowrap gap-12">
                 {[...trustBadges, ...trustBadges].map((badge, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5 text-[8px] lg:text-[9px] font-black uppercase tracking-[0.25em] text-slate-400">
+                  <div key={idx} className="flex items-center gap-2.5 text-[8px] lg:text-[9px] font-black uppercase tracking-[0.22em] text-slate-400">
                     <span className="text-red-800/40">{badge.icon}</span>
                     {badge.text}
                   </div>
@@ -106,7 +106,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           </div>
 
           {/* Right Side: Larger Image Frame */}
-          <div className="w-full lg:w-[44%] xl:w-[47%] h-[290px] md:h-[360px] lg:h-[420px] xl:h-[470px] z-10 relative flex-shrink-0">
+          <div className="w-full lg:w-[44%] xl:w-[47%] h-[295px] md:h-[360px] lg:h-[425px] xl:h-[470px] z-10 relative flex-shrink-0">
             
             <div className="relative w-full h-full rounded-xl overflow-hidden border border-slate-300/90 bg-white group shadow-[0_24px_60px_-24px_rgba(15,23,42,0.35)]">
               

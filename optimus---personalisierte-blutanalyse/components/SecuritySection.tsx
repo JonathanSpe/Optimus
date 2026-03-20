@@ -5,14 +5,14 @@ const SecuritySection: React.FC = () => {
   return (
     <section className="bg-white overflow-hidden relative border-t border-slate-100">
       {/* Upper Content: Security Focus */}
-      <div className="py-24 lg:py-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+      <div className="py-20 lg:py-24 px-6">
+        <div className="medical-page-container">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-18">
             
             {/* Left Side: Visual/Logos */}
             <div className="flex-1 w-full order-2 lg:order-1">
-              <div className="relative p-1 rounded-[4rem] bg-gradient-to-br from-slate-50 to-transparent shadow-[0_32px_80px_-16px_rgba(0,0,0,0.06)] max-w-lg mx-auto lg:mx-0 border border-slate-100">
-                <div className="bg-white rounded-[3.9rem] p-10 md:p-14 border border-white flex flex-col items-center justify-center text-center space-y-8">
+              <div className="relative p-1 rounded-[3rem] bg-gradient-to-br from-slate-50 to-transparent shadow-[0_20px_60px_-30px_rgba(0,0,0,0.18)] max-w-lg mx-auto lg:mx-0 border border-slate-200">
+                <div className="bg-white rounded-[2.8rem] p-9 md:p-10 border border-white flex flex-col items-center justify-center text-center space-y-7">
                   <div className="relative">
                     <div className="w-24 h-24 bg-red-800/[0.03] border border-red-800/10 rounded-3xl flex items-center justify-center text-red-800 shadow-sm relative z-10">
                       <Shield size={42} strokeWidth={1.5} />
@@ -51,16 +51,16 @@ const SecuritySection: React.FC = () => {
 
             {/* Right Side: Text Content */}
             <div className="flex-1 space-y-10 order-1 lg:order-2">
-              <div className="space-y-6">
+              <div className="space-y-5">
                 <div className="inline-flex items-center gap-3">
                   <div className="w-10 h-[1.5px] bg-slate-200"></div>
-                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Security & Privacy</span>
+                  <span className="medical-eyebrow">Security & Privacy</span>
                 </div>
-                <h2 className="text-5xl md:text-7xl font-[900] tracking-tighter leading-[0.9] text-[#0F172A]">
+                <h2 className="text-4xl md:text-6xl font-[900] medical-heading-lg text-[#0F172A]">
                   Deine Daten. <br /> 
                   <span className="text-slate-900/40 italic font-[800]">Deine Festung.</span>
                 </h2>
-                <p className="text-slate-500 text-lg lg:text-xl leading-relaxed font-medium max-w-xl">
+                <p className="medical-copy text-base lg:text-lg font-medium max-w-xl">
                   Gesundheitsdaten sind das privateste Gut, das wir besitzen. Deshalb speichern wir absolut keine Daten außerhalb von Deutschland.
                 </p>
               </div>
@@ -76,8 +76,8 @@ const SecuritySection: React.FC = () => {
       </div>
 
       {/* Final Trust Grid: Re-located from Pricing as requested */}
-      <div className="bg-[#F8FAFC] py-16 border-y border-slate-100">
-        <div className="max-w-7xl mx-auto px-6">
+      <div className="bg-[#F8FAFC] py-14 border-y border-slate-100">
+        <div className="medical-page-container px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
              <TrustBarPoint 
                icon={<Microscope className="text-red-800" size={24} />} 

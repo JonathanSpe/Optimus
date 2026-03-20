@@ -7,24 +7,24 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
-    <footer className="py-24 px-6 border-t border-black/[0.03] medical-section">
+    <footer className="py-20 px-6 border-t border-black/[0.03] medical-section">
       <div className="medical-page-container">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
           <div className="space-y-4">
             <div 
               className="flex items-center gap-2 cursor-pointer group"
               onClick={() => onNavigate('home')}
             >
               <div className="w-8 h-8 medical-logo-badge rounded-lg flex items-center justify-center font-bold text-xl group-hover:scale-105 transition-transform text-white">O</div>
-              <span className="text-xl font-bold tracking-tighter uppercase text-[#333333]">Optimus</span>
+              <span className="text-[1.05rem] font-bold tracking-[-0.03em] uppercase text-[#333333]">Optimus</span>
             </div>
-            <p className="text-zinc-400 max-w-xs font-medium leading-relaxed">Dein Weg zu einer optimierten Gesundheit. Schmerzfrei, schnell und wissenschaftlich fundiert.</p>
+            <p className="text-zinc-500 max-w-xs font-medium leading-relaxed">Dein Weg zu einer optimierten Gesundheit. Schmerzfrei, schnell und wissenschaftlich fundiert.</p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-10">
             <div className="space-y-4">
-              <h4 className="font-bold text-[#333333] text-sm uppercase tracking-widest">Unternehmen</h4>
-              <ul className="space-y-2 text-zinc-400 text-sm font-medium">
+              <h4 className="font-bold text-[#333333] text-sm uppercase tracking-[0.16em]">Unternehmen</h4>
+              <ul className="space-y-2 text-zinc-500 text-sm font-medium">
                 <li><button onClick={() => onNavigate('about')} className="hover:text-red-600 transition-colors">Über uns</button></li>
                 <li><button onClick={() => onNavigate('supplements')} className="hover:text-red-600 transition-colors">Supplements</button></li>
                 <li><button onClick={() => onNavigate('how-it-works')} className="hover:text-red-600 transition-colors">Wie es funktioniert</button></li>
@@ -32,16 +32,16 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </ul>
             </div>
             <div className="space-y-4">
-              <h4 className="font-bold text-[#333333] text-sm uppercase tracking-widest">Rechtliches</h4>
-              <ul className="space-y-2 text-zinc-400 text-sm font-medium">
+              <h4 className="font-bold text-[#333333] text-sm uppercase tracking-[0.16em]">Rechtliches</h4>
+              <ul className="space-y-2 text-zinc-500 text-sm font-medium">
                 <li><a href="#" className="hover:text-red-600 transition-colors">Impressum</a></li>
                 <li><a href="#" className="hover:text-red-600 transition-colors">Datenschutz</a></li>
                 <li><a href="#" className="hover:text-red-600 transition-colors">AGB</a></li>
               </ul>
             </div>
             <div className="space-y-4">
-              <h4 className="font-bold text-[#333333] text-sm uppercase tracking-widest">Support</h4>
-              <ul className="space-y-2 text-zinc-400 text-sm font-medium">
+              <h4 className="font-bold text-[#333333] text-sm uppercase tracking-[0.16em]">Support</h4>
+              <ul className="space-y-2 text-zinc-500 text-sm font-medium">
                 <li><a href="#" className="hover:text-red-600 transition-colors">Hilfe-Center</a></li>
                 <li><a href="#" className="hover:text-red-600 transition-colors">Kontakt</a></li>
               </ul>
@@ -49,7 +49,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
         </div>
         
-        <div className="mt-20 pt-8 border-t border-black/[0.03] flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-zinc-400 font-bold uppercase tracking-widest">
+        <div className="mt-14 pt-8 border-t border-black/[0.03] flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-zinc-500 font-bold uppercase tracking-[0.14em]">
           <p>© 2024 Optimus Health Solutions GmbH. Alle Rechte vorbehalten.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-black transition-colors">Instagram</a>

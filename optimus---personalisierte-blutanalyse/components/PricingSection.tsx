@@ -60,53 +60,53 @@ const PricingSection: React.FC = () => {
   };
 
   return (
-    <section id="pricing" className="py-12 lg:py-16 px-6 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto">
+    <section id="pricing" className="py-14 lg:py-20 px-6 bg-[#F8FAFC]">
+      <div className="medical-page-container">
         <div className="text-center mb-10 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-100 text-red-800 text-[9px] font-black uppercase tracking-[0.2em] mb-0.5 shadow-sm">
             Wähle dein Level
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-[900] tracking-tighter leading-none text-[#0F172A]">
+          <h2 className="text-4xl md:text-5xl lg:text-[3.55rem] font-[900] medical-heading-lg text-[#0F172A]">
             Präzision für <span className="text-slate-900/40 italic font-[800]">jeden Anspruch.</span>
           </h2>
-          <p className="text-slate-500 text-base font-medium max-w-xl mx-auto italic">
+          <p className="medical-copy text-base font-medium max-w-xl mx-auto italic">
             Wissenschaftlich fundierte Optimierung ohne Kompromisse.
           </p>
         </div>
 
         {/* Added pt-8 to prevent the "Premium Choice" badge from being clipped */}
-        <div className="overflow-x-auto pb-4 pt-8">
+        <div className="overflow-x-auto pb-3 pt-6">
           <table className="w-full border-separate border-spacing-y-1.5 min-w-[850px]">
             <thead>
               <tr className="text-left">
                 <th className="p-3 text-slate-400 font-black uppercase tracking-[0.3em] text-[8px]">Leistungsumfang</th>
                 
                 {/* Elite Plan */}
-                <th className="p-5 bg-white border-x border-t border-slate-100 rounded-t-[2rem] w-1/4 shadow-sm">
+                <th className="p-4 bg-white border-x border-t border-slate-100 rounded-t-[1.5rem] w-1/4 shadow-sm">
                   <div className="text-slate-400 font-black text-[8px] uppercase tracking-widest mb-1">Elite Plan</div>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-[900] text-[#0F172A]">69€</span>
+                    <span className="text-[2rem] font-[900] text-[#0F172A]">69€</span>
                     <span className="text-[9px] text-slate-400 font-black uppercase tracking-widest">/ Mon.</span>
                   </div>
                 </th>
 
                 {/* Optimizer Plan (Premium Choice) */}
-                <th className="p-5 bg-slate-900 rounded-t-[2rem] border-x border-t border-slate-900 w-1/4 shadow-xl relative">
+                <th className="p-4 bg-slate-900 rounded-t-[1.5rem] border-x border-t border-slate-900 w-1/4 shadow-lg relative">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-800 text-white text-[8px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full shadow-lg z-10 whitespace-nowrap">
                     Premium choice
                   </div>
                   <div className="text-slate-400 font-black text-[8px] uppercase tracking-widest mb-1">Optimizer Plan</div>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-[900] text-white">29€</span>
+                    <span className="text-[2.2rem] font-[900] text-white">29€</span>
                     <span className="text-[9px] text-slate-400 font-black uppercase tracking-widest">/ Mon.</span>
                   </div>
                 </th>
 
                 {/* Hausarzt Plan */}
-                <th className="p-5 bg-white rounded-t-[2rem] border-x border-t border-slate-100 w-1/4">
+                <th className="p-4 bg-white rounded-t-[1.5rem] border-x border-t border-slate-100 w-1/4">
                   <div className="text-slate-400 font-black text-[8px] uppercase tracking-widest mb-1">Hausarzt</div>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-[900] text-slate-600">150€+</span>
+                    <span className="text-[2rem] font-[900] text-slate-600">150€+</span>
                   </div>
                 </th>
               </tr>
@@ -114,7 +114,7 @@ const PricingSection: React.FC = () => {
             <tbody className="bg-white">
               {comparisonData.map((row, idx) => (
                 <tr key={idx} className="group">
-                  <td className="p-3.5 px-5 rounded-l-2xl border-l border-y border-slate-100 font-black text-slate-700 text-xs group-hover:text-[#0F172A] transition-colors uppercase tracking-tight">
+                  <td className="p-3 px-5 rounded-l-2xl border-l border-y border-slate-100 font-black text-slate-700 text-[11px] group-hover:text-[#0F172A] transition-colors uppercase tracking-tight">
                     {row.feature}
                   </td>
                   
@@ -138,13 +138,13 @@ const PricingSection: React.FC = () => {
             <tfoot>
               <tr>
                 <td className="p-2"></td>
-                <td className="p-4">
-                  <button className="w-full py-3 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-[#0F172A] transition-all font-black text-[9px] uppercase tracking-widest shadow-sm">
+                <td className="p-3">
+                  <button className="w-full py-3 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-[#0F172A] transition-all font-black text-[8px] uppercase tracking-widest shadow-sm">
                     Plan wählen
                   </button>
                 </td>
-                <td className="p-4">
-                  <button className="w-full py-4 rounded-xl bg-red-800 text-white hover:bg-red-900 transition-all font-black text-[9px] uppercase tracking-[0.25em] shadow-xl flex items-center justify-center gap-2 group active:scale-95">
+                <td className="p-3">
+                  <button className="w-full py-3.5 rounded-xl bg-red-800 text-white hover:bg-red-900 transition-all font-black text-[8px] uppercase tracking-[0.22em] shadow-lg flex items-center justify-center gap-2 group active:scale-95">
                     Jetzt Starten <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                   </button>
                 </td>
