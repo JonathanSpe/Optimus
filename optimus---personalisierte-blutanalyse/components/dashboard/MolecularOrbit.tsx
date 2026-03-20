@@ -38,6 +38,15 @@ export const MolecularOrbit: React.FC<MolecularOrbitProps> = ({ categories, sele
     [selectedData]
   );
 
+  const lifestyleHints: Record<string, string> = {
+    Magnesium: 'Good sleep recorded',
+    VitaminD: 'Vegetarian diet logged',
+    CRP: 'Steps taken: 13.2k',
+    Ferritin: 'Vegetarian diet logged',
+    Omega3: 'Good sleep recorded',
+    Hämoglobin: 'Steps taken: 13.2k',
+  };
+
   const DonutScore = ({ value, active }: { value: number; active: boolean }) => {
     const clamped = Math.max(0, Math.min(100, value));
     const radius = 18;
@@ -154,6 +163,13 @@ export const MolecularOrbit: React.FC<MolecularOrbitProps> = ({ categories, sele
                     </span>
                   ))}
                 </div>
+                {lifestyleHints[marker.dataKey] && (
+                  <div className="pt-1 border-t border-slate-100">
+                    <span className="text-[8px] font-black uppercase tracking-widest text-emerald-700 bg-emerald-50 border border-emerald-100 px-2 py-1 rounded-md inline-block">
+                      {lifestyleHints[marker.dataKey]}
+                    </span>
+                  </div>
+                )}
               </div>
             ))}
           </div>

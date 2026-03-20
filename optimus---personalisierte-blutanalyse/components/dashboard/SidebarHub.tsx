@@ -42,7 +42,7 @@ const FloatingActionHub: React.FC = () => (
 
 export const SidebarHub: React.FC = () => {
   return (
-    <div className="lg:col-span-4 space-y-4">
+    <div className="space-y-4">
       <FloatingActionHub />
       
       <div className="scale-[0.98] origin-top">

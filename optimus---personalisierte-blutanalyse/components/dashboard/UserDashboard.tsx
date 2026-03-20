@@ -138,12 +138,14 @@ const UserDashboard: React.FC<{ onNavigate: (page: any) => void }> = ({ onNaviga
                 onSelect={setSelectedKey} 
               />
               <div className="border-t border-slate-200" />
-              <AnalysisPanel activeData={activeData} onNavigate={onNavigate} />
+              <div className="px-6 pb-6 pt-3">
+                <AnalysisPanel activeData={activeData} onNavigate={onNavigate} />
+              </div>
             </div>
           </div>
 
           {/* Right Summary Column */}
-          <div className="lg:col-span-4 space-y-6">
+          <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-24 self-start">
             <SummarySidebar />
             <SidebarHub />
           </div>
