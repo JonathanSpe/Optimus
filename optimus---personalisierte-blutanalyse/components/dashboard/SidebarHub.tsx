@@ -1,7 +1,6 @@
 
 import React from 'react';
-import { ShieldCheck, Heart, Footprints, Calendar, ChevronRight, Droplets, Download, Moon, Zap, Smartphone, Activity, RefreshCcw, FileText, Send } from 'lucide-react';
-import AIChat from '../AIChat';
+import { ShieldCheck, Heart, Footprints, Calendar, Droplets, Download, Moon, Zap, Smartphone, Activity, RefreshCcw, FileText, Send } from 'lucide-react';
 
 const IntegrationItem: React.FC<{ name: string; icon: React.ReactNode; status: 'Live' | 'Syncing' | 'Last Check'; color: string; time?: string }> = ({ name, icon, status, color, time }) => (
   <div className="flex items-center justify-between p-3 rounded-xl bg-zinc-50 border border-zinc-100 hover:bg-white transition-all group">
@@ -44,10 +43,6 @@ export const SidebarHub: React.FC = () => {
   return (
     <div className="space-y-4">
       <FloatingActionHub />
-      
-      <div className="scale-[0.98] origin-top">
-        <AIChat />
-      </div>
 
       {/* Connectivity Tracker */}
       <div className="bg-white/95 rounded-[2.5rem] p-6 border border-black/[0.02] shadow-2xl space-y-4">
