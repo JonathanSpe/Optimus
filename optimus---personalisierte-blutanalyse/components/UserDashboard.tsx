@@ -64,42 +64,50 @@ const UserDashboard: React.FC<{ onNavigate: (page: any) => void }> = ({ onNaviga
 
         {/* Unified Dashboard Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* Main Section: Biomarkers + Evolution (no visual gap) */}
-          <div className="lg:col-span-8 bg-white rounded-[3.5rem] border border-slate-200 medical-card-shadow overflow-hidden relative">
-            <MolecularOrbit categories={categories} selectedKey={selectedKey} onSelect={setSelectedKey} />
-            <div className="border-t border-slate-200 bg-slate-50/70 px-6 py-4">
-              <p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-500">
-                Evolution and Clinical Insights
-              </p>
+          {/* Main Section: explicit and always visible sections */}
+          <div className="lg:col-span-8 space-y-6">
+            <div className="bg-white rounded-[3.5rem] border border-slate-200 medical-card-shadow overflow-hidden relative">
+              <MolecularOrbit categories={categories} selectedKey={selectedKey} onSelect={setSelectedKey} />
             </div>
-            <div className="px-6 pb-6 pt-2 bg-slate-50/40">
-              <AnalysisPanel activeData={activeData} onNavigate={onNavigate} />
+
+            <div className="bg-white rounded-[3rem] border border-slate-200 medical-card-shadow overflow-hidden">
+              <div className="border-b border-slate-200 bg-slate-50/70 px-6 py-4">
+                <p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-500">
+                  Evolution and Clinical Insights
+                </p>
+              </div>
+              <div className="px-6 pb-6 pt-3 bg-slate-50/30">
+                <AnalysisPanel activeData={activeData} onNavigate={onNavigate} />
+              </div>
             </div>
-            <div className="border-t border-slate-200 bg-slate-50/70 px-6 py-4">
-              <p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-500">
-                AI Insight
-              </p>
-            </div>
-            <div className="px-6 pb-8 pt-2">
-              <div className="rounded-[2rem] border border-slate-200 bg-white p-6 medical-card-shadow">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="space-y-2">
-                    <h4 className="text-xl font-black tracking-tight text-slate-900">
-                      {activeData.label} AI Insight
-                    </h4>
-                    <p className="text-sm font-semibold text-slate-600 leading-relaxed">
-                      {activeData.trendInsight}
-                    </p>
-                    <p className="text-sm text-slate-500 leading-relaxed">
-                      {activeData.trendDeepDive}
-                    </p>
+
+            <div className="bg-white rounded-[3rem] border border-slate-200 medical-card-shadow overflow-hidden">
+              <div className="border-b border-slate-200 bg-slate-50/70 px-6 py-4">
+                <p className="text-[10px] font-black uppercase tracking-[0.28em] text-slate-500">
+                  AI Insight
+                </p>
+              </div>
+              <div className="px-6 pb-8 pt-4">
+                <div className="rounded-[2rem] border border-slate-200 bg-white p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="space-y-2">
+                      <h4 className="text-xl font-black tracking-tight text-slate-900">
+                        {activeData.label} AI Insight
+                      </h4>
+                      <p className="text-sm font-semibold text-slate-600 leading-relaxed">
+                        {activeData.trendInsight}
+                      </p>
+                      <p className="text-sm text-slate-500 leading-relaxed">
+                        {activeData.trendDeepDive}
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => onNavigate('recommendations')}
+                      className="shrink-0 px-5 py-3 rounded-xl bg-[#0F172A] text-white text-[10px] font-black uppercase tracking-widest hover:bg-black transition-all"
+                    >
+                      Open Strategy
+                    </button>
                   </div>
-                  <button
-                    onClick={() => onNavigate('recommendations')}
-                    className="shrink-0 px-5 py-3 rounded-xl bg-[#0F172A] text-white text-[10px] font-black uppercase tracking-widest hover:bg-black transition-all"
-                  >
-                    Open Strategy
-                  </button>
                 </div>
               </div>
             </div>
