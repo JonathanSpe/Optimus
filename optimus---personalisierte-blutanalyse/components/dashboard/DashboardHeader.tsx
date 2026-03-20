@@ -7,7 +7,9 @@ export const DashboardHeader: React.FC = () => {
     <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-8">
       <div className="space-y-1">
          <div className="flex items-center gap-4">
-            <h1 className="text-4xl lg:text-5xl font-black tracking-tighter leading-none uppercase text-[#0F172A]">Biometric <span className="text-slate-300 italic">Feed</span></h1>
+            <h1 className="text-4xl lg:text-5xl font-black tracking-tighter leading-none text-[#0F172A]">
+              Your<span className="text-slate-300 italic">Result</span>
+            </h1>
          </div>
       </div>
 

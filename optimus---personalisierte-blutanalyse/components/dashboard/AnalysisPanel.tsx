@@ -67,7 +67,7 @@ export const AnalysisPanel: React.FC<AnalysisPanelProps> = ({ activeData, onNavi
   const chartColors = ['#6366f1', '#10b981', '#f59e0b', '#ec4899'];
 
   return (
-    <div className="lg:col-span-8 space-y-4">
+    <div className="space-y-4">
       
       {/* 1. DOMAIN EVOLUTION CHART (LAB + STRAVA CORRELATION) */}
       <div className="bg-white rounded-[2.5rem] p-10 border border-slate-200 medical-card-shadow">
